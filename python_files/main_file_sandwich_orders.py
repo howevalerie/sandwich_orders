@@ -1,5 +1,5 @@
 complete_order_list = []
-full_customer_details_list = [["Pickup or Delivery:", "Name:", "Address:", "Phone Number:"]]
+full_customer_details_list = [["Pickup or Delivery", "Name", "Address", "Phone Number"]]
 
 def get_string(message):
     my_string = str(input(message)).capitalize()
@@ -16,7 +16,7 @@ def get_quantity(message):
         if quantity <= 5:
             running = False
         else:
-            print("Your desired quantity exceeds the maximum of 5. Please try again.")
+            print("Quantity exceeds the maximum of 5. Please try again.")
     return quantity
 
 def get_order_total(L, delivery):
@@ -43,7 +43,7 @@ def print_two_list(L):
 def print_customer_details(L):
     print("DETAILS")
     for i in range(0, len(L[1])):
-        output = "{:20}  {:100}".format(L[0][i], L[1][i])
+        output = "{:64}:  {:<80}".format(L[0][i], L[1][i])
         print(output)
     return None
 
