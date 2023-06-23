@@ -1,4 +1,4 @@
-"""This file facilitates a program for ordering sandwiches."""
+"""This file contains a program for ordering sandwiches."""
 
 # Declare List for All Sandwich Orders
 complete_order_list = []
@@ -7,7 +7,9 @@ complete_order_list = []
 alphabet_list = ["A", "B", "C", "D", "E", "F"]
 
 # Declare List for Storing Customer Details
-full_customer_details_list = [["Pickup or Delivery", "Name", "Address", "Phone Number"]]
+full_customer_details_list = [
+    ["Pickup or Delivery:", "Name:", "Address:", "Phone Number:"]
+]
 
 
 def get_string(message):
@@ -17,7 +19,7 @@ def get_string(message):
     :return: string
     """
     running = True
-    while running == True:
+    while running is True:
         # Get input
         my_string = input(message)
         # Remove spaces from input
@@ -37,11 +39,11 @@ def get_integer(message):
     :return: integer
     """
     running = True
-    while running == True:
+    while running is True:
         # Get input
         my_integer = input(message)
         # Ensure input is an integer
-        if my_integer.isdigit() == True:
+        if my_integer.isdigit() is True:
             return int(my_integer)
         else:
             print("ERROR: Invalid Input. Please try again.")
@@ -54,8 +56,9 @@ def get_quantity(message):
     :param message: string
     :return: integer
     """
+    quantity = 0
     running = True
-    while running == True:
+    while running is True:
         # Get the customer's desired quantity
         quantity = get_integer(message)
         # Ensure quantity is not 0
@@ -67,7 +70,8 @@ def get_quantity(message):
             if quantity <= 5:
                 running = False
             else:
-                print("ERROR: Quantity exceeds the maximum of 5. Please try again.")
+                print("ERROR: Quantity exceeds the maximum of 5. "
+                      "Please try again.")
                 print("." * 120)
     return quantity
 
@@ -98,13 +102,13 @@ def get_order_total(list_1, delivery):
     for i in range(0, len(list_1)):
         order_total += list_1[i][3]
     # Add $3 delivery fee if customer chooses delivery
-    if delivery == True:
+    if delivery is True:
         order_total += 3
     return order_total
 
 
-def get_sandwich_index(list_1, item):
-    """Find index of sandwich type in list.
+def get_index(list_1, item):
+    """Find index of item in a list.
 
     :param list_1: list
     :param item: string
@@ -115,7 +119,7 @@ def get_sandwich_index(list_1, item):
     for row in list_1:
         # Check if item is in each nested list
         if item in row:
-            # If item is in nested list, return the index of the sandwich type
+            # If item is in nested list, return the index of the item
             return i
         i += 1
 
@@ -144,7 +148,7 @@ def print_customer_details(list_1):
     # Loop through the customer details list
     for i in range(0, len(list_1[1])):
         # Print customer details from the list
-        output = "{:64}:  {:<80}".format(list_1[0][i], list_1[1][i])
+        output = "{:20} {:<80}".format(list_1[0][i], list_1[1][i])
         print(output)
     return None
 
@@ -164,13 +168,13 @@ def get_phone_number_digits(phone_number_entry):
 
 
 def get_valid_postcode(message):
-    """Ensure that the customer's postcode entry is 4 digits long
+    """Ensure that the customer's postcode entry is 4 digits long.
 
     :param message: string
     :return: integer
     """
     running = True
-    while running == True:
+    while running is True:
         postcode_entry = get_integer(message)
         # Count the number of digits in the postcode entry
         digits = 0
@@ -182,7 +186,8 @@ def get_valid_postcode(message):
             return postcode_entry
         # Postcode entry does not have four digits
         else:
-            print("ERROR: Invalid Input: 4 digits were expected. Please try again.")
+            print("ERROR: Invalid Input: 4 digits were expected. "
+                  "Please try again.")
             print("." * 120)
 
 
@@ -201,16 +206,19 @@ def get_customer_details_preferences(list_1):
     ]
     print_two_list(pickup_delivery)
     print("." * 120)
+    delivery = False
+    method = "A"
 
     running = True
-    while running == True:
+    while running is True:
         # Get customer choice (pickup or delivery)
-        method = get_string("Select Preferred Method (Enter Corresponding Alphabet): ")
-        print("." * 120)
-        print("STEP 2: ENTER DETAILS")
-        print()
+        method = get_string("Select Preferred Method "
+                            "(Enter Corresponding Alphabet): ")
         # Customer selects pickup
         if method == "A":
+            print("." * 120)
+            print("STEP 2: ENTER DETAILS")
+            print()
             # Get customer name
             name = get_string("Enter Your Name: ")
             # Store customer name in a list
@@ -222,6 +230,9 @@ def get_customer_details_preferences(list_1):
             running = False
         # Customer selects delivery
         elif method == "B":
+            print("." * 120)
+            print("STEP 2: ENTER DETAILS")
+            print()
             # Get customer name
             name = get_string("Name: ")
             # Get customer address details
@@ -232,8 +243,9 @@ def get_customer_details_preferences(list_1):
             # Concatenate address details to create full address
             address = number + " " + street + ", " + suburb + ", " + postcode
             # Get customer phone number
+            phone_number = 00000000
             going = True
-            while going == True:
+            while going is True:
                 phone_number_entry = get_integer("Phone Number: (+64) ")
                 digits = get_phone_number_digits(phone_number_entry)
                 if digits == 8:
@@ -287,7 +299,8 @@ def print_sandwich_menu(list_1):
     # Print sandwich menu
     print("SANDWICH MENU")
     for i in range(0, len(list_1)):
-        output = "{}: {:60}: ${:<10}".format(list_1[i][0], list_1[i][1], list_1[i][2])
+        output = "{}: {:60}: ${:<10}"\
+            .format(list_1[i][0], list_1[i][1], list_1[i][2])
         print(output)
     return None
 
@@ -306,70 +319,79 @@ def order_sandwich(list_1, list_2):
     print("." * 120)
     print("MAKE AN ORDER")
     running = True
-    while running == True:
+    while running is True:
         # Get the corresponding letter for customer's choice of sandwich
-        msg_sandwich_choice = "{:60}".format("Select Sandwich Type (Enter Corresponding Alphabet): ")
+        msg_sandwich_choice = "{:60}"\
+            .format("Select Sandwich Type (Enter Corresponding Alphabet): ")
         sw_choice_letter = get_string(msg_sandwich_choice)
         # Check if corresponding letter is valid
-        x = check_if_in_list(list_1, sw_choice_letter)
+        in_list = check_if_in_list(list_1, sw_choice_letter)
         # Customer enters a valid entry for corresponding letter
-        if x == True:
-            # Customer wishes to return to the main menu
-            if sw_choice_letter == "X":
-                running = False
-            # Customer wishes to order a sandwich
+
+        # Customer wishes to return to the main menu
+        if sw_choice_letter == "X":
+            return None
+        elif in_list is True:
+            # Get index for desired sandwich
+            sw_type_index = get_index(list_1, sw_choice_letter)
+            # Get the name of the desired sandwich
+            sw_type = list_1[sw_type_index][1]
+            # Check if an order for this sandwich type already exists
+            already_ordered = check_if_in_list(list_2, sw_type)
+            # Customer has already made an order for this sandwich type
+            if already_ordered is True:
+                # Notify customer of duplication
+                print("ERROR: You have already made an "
+                      "order for {} sandwiches. ".format(sw_type))
+                print("." * 120)
+                # Display options: edit quantity or cancel duplicate order
+                print("OPTIONS")
+                duplicate_options = [
+                    ["A", "Edit Quantity of " + sw_type + " Sandwiches"],
+                    ["B", "Cancel Duplicate Order & Return to Main Menu"]
+                ]
+                print_two_list(duplicate_options)
+                print("")
+                going = True
+                while going is True:
+                    # Get customer choice
+                    msg_option_choice = "Select Option " \
+                                        "(Enter Corresponding Alphabet): "
+                    chosen_option = get_string(msg_option_choice)
+                    if chosen_option == "A":
+                        print("." * 120)
+                        # Direct customer to edit order quantity
+                        edit_order(complete_order_list, alphabet_list)
+                        return None
+                    elif chosen_option == "B":
+                        return None
+                    else:
+                        print("ERROR: Invalid Input. Please try again.")
+            # Customer has NOT already made an order for this sandwich type
             else:
-                # Get index for desired sandwich
-                sw_type_index = get_sandwich_index(list_1, sw_choice_letter)
-                # Get the name of the desired sandwich
-                sw_type = list_1[sw_type_index][1]
-                # Check if an order for this sandwich type already exists
-                already_ordered = check_if_in_list(list_2, sw_type)
-                # Customer has already made an order for this sandwich type
-                if already_ordered == True:
-                    # Notify customer of duplication
-                    print("ERROR: You have already made an order for {} sandwiches. ".format(sw_type))
-                    print("." * 120)
-                    # Display options: edit quantity or cancel duplicate order
-                    print("OPTIONS")
-                    duplicate_options = [
-                        ["A", "Edit Quantity of " + sw_type + " Sandwiches"],
-                        ["B", "Cancel Duplicate Order & Return to Main Menu"]
-                    ]
-                    print_two_list(duplicate_options)
-                    print("")
-                    going = True
-                    while going == True:
-                        # Get customer choice
-                        msg_option_choice = "Select Option (Enter Corresponding Alphabet): "
-                        chosen_option = get_string(msg_option_choice)
-                        if chosen_option == "A":
-                            print("." * 120)
-                            # Direct customer to edit order quantity
-                            edit_order(complete_order_list, alphabet_list)
-                            return None
-                        elif chosen_option == "B":
-                            return None
-                        else:
-                            print("ERROR: Invalid Input. Please try again.")
-                # Customer has NOT already made an order for this sandwich type
-                else:
-                    # Get individual price for the sandwich type
-                    sw_price = list_1[sw_type_index][2]
-                    # Get the desired quantity for the sandwich type
-                    sw_quantity = get_quantity("{:60}".format("Enter Quantity (Maximum of 5): "))
-                    # Calculate total cost of sandwiches at quantities
-                    sw_total_price = sw_quantity*sw_price
-                    # Store the order details in a list
-                    order_list = [sw_type, sw_quantity, sw_price, sw_total_price]
-                    # Add order details list to the complete order list
-                    complete_order_list.append(order_list)
-                    print("." * 120)
-                    # Display the processed order
-                    print("PROCESSED ORDER")
-                    order_output = "{} x {} Sandwiches".format(sw_quantity, sw_type)
-                    print(order_output)
-                    running = False
+                # Get individual price for the sandwich type
+                sw_price = list_1[sw_type_index][2]
+                # Get the desired quantity for the sandwich type
+                sw_quantity = get_quantity(
+                    "{:60}".format("Enter Quantity (Maximum of 5): "))
+                # Calculate total cost of sandwiches at quantities
+                sw_total_price = sw_quantity*sw_price
+                # Store the order details in a list
+                order_list = [
+                    sw_type,
+                    sw_quantity,
+                    sw_price,
+                    sw_total_price
+                ]
+                # Add order details list to the complete order list
+                complete_order_list.append(order_list)
+                print("." * 120)
+                # Display the processed order
+                print("PROCESSED ORDER")
+                order_output = "{} x {} Sandwiches"\
+                    .format(sw_quantity, sw_type)
+                print(order_output)
+                running = False
         # Customer enters an invalid entry for corresponding letter
         else:
             print("ERROR: Invalid Input. Please try again.")
@@ -394,10 +416,15 @@ def review_orders(list_1, delivery):
         order_total = get_order_total(complete_order_list, delivery)
         # Print order review
         for i in range(0, len(list_1)):
-            output = "{} x {:60}: {:<1} x ${:4} = ${:4.2f}".format(list_1[i][1], list_1[i][0], list_1[i][1], list_1[i][2], list_1[i][3])
+            output = "{} x {:60}: {:<1} x ${:4} = ${:4.2f}"\
+                .format(list_1[i][1],
+                        list_1[i][0],
+                        list_1[i][1],
+                        list_1[i][2],
+                        list_1[i][3])
             print(output)
         total_charge = "{:<64}: ${:4.2f}".format("Total Charge", order_total)
-        print("-" * 120)
+        print("-" * 90)
         print(total_charge)
         return None
 
@@ -422,72 +449,107 @@ def edit_order(list_1, list_2):
             ["X", "Cancel and Return to Main Menu"]
         ]
         print_two_list(edit_options)
+        print("." * 120)
         user_choice = "X"
 
         going = True
-        while going == True:
+        while going is True:
             running = True
-            while running == True:
-                print("." * 120)
+            while running is True:
                 # Get customer choice for editing orders
-                user_choice = get_string("Select Operation (Enter Corresponding Alphabet): ")
+                msg_user_choice = "Select Operation " \
+                                  "(Enter Corresponding Alphabet): "
+                user_choice = get_string(msg_user_choice)
+                # Customer Selects: Remove a Sandwich Type
                 if user_choice == "A":
                     running = False
+                # Customer Selects: Edit Quantity of Sandwich
                 elif user_choice == "B":
                     running = False
+                # Customer Selects: Cancel and Return to Main Menu
                 elif user_choice == "X":
                     return None
+                # Customer enters an invalid input
                 else:
                     print("ERROR: Invalid Input. Please try again.")
+                    print("." * 120)
 
             # Display a review of customer orders
             print("." * 120)
             print("ORDER REVIEW")
             for i in range(0, len(list_1)):
-                output = "{}: {} x {:60}".format(list_2[i], list_1[i][1], list_1[i][0])
+                output = "{}: {} x {:60}"\
+                    .format(list_2[i],
+                            list_1[i][1],
+                            list_1[i][0])
                 print(output)
 
             # Get customer to select which order to edit
             print("." * 120)
-            edit_sandwich_type_index = 0
-            edit_sandwich_type = ""
-            edit_sandwich_quantity = 0
+
+            sw_index = 0
+            sw_type = ""
+            sw_quantity = 0
+
             order_letter_input_loop = True
-            while order_letter_input_loop == True:
-                edit_sandwich_type_letter = get_string("Select Relevant Order (Enter Corresponding Alphabet): ")
-                x = check_if_in_list(list_2, edit_sandwich_type_letter)
-                if x == True:
-                    edit_sandwich_type_index = get_sandwich_index(alphabet_list, edit_sandwich_type_letter)
-                    edit_sandwich_type = list_1[edit_sandwich_type_index][0]
-                    edit_sandwich_quantity = list_1[edit_sandwich_type_index][1]
-                    order_letter_input_loop = False
-                    going = False
+            while order_letter_input_loop is True:
+                # Determine the sandwich to edit
+                msg_sw_letter = "Select Relevant Order " \
+                                "(Enter Corresponding Alphabet): "
+                sw_letter = get_string(msg_sw_letter)
+
+                x = check_if_in_list(list_2, sw_letter)
+                # Customer Enters: A, B, C, D, E or F
+                if x is True:
+                    # Get index of letter (same as index of sandwich)
+                    sw_index = get_index(alphabet_list, sw_letter)
+                    # Ensure Customer Enters an Order than Exists
+                    x = len(complete_order_list)
+                    if sw_index < x:
+                        # Get sandwich type
+                        sw_type = list_1[sw_index][0]
+                        # Get sandwich quantity
+                        sw_quantity = list_1[sw_index][1]
+                        order_letter_input_loop = False
+                        going = False
+                    else:
+                        print("Invalid Input. Please try again.")
+                        print("." * 120)
+                # Customer does not enters: A, B, C, D, E or F
                 else:
                     print("ERROR: Invalid Input. Please try again.")
+                    print("." * 120)
 
             # Customer wishes to remove order
             if user_choice == "A":
                 # Remove order
-                complete_order_list.pop(edit_sandwich_type_index)
-                # Provide customer confirmation
-                print("ACTION: Removed {} x {} Sandwiches".format(edit_sandwich_quantity, edit_sandwich_type))
+                complete_order_list.pop(sw_index)
+                # Provide customer confirmation of removal
+                print("ACTION: Removed {} x {} Sandwiches"
+                      .format(sw_quantity, sw_type))
                 going = False
             # Customer wishes to edit the quantity of the order
             elif user_choice == "B":
                 new_quantity_loop = True
-                while new_quantity_loop == True:
+                while new_quantity_loop is True:
                     # Get new quantity
-                    new_quantity = get_quantity("Enter New Quantity for {} Sandwiches: ". format(edit_sandwich_type))
-                    list_1[edit_sandwich_type_index][1] = new_quantity
+                    new_quantity = get_quantity(
+                        "Enter New Quantity for {} Sandwiches: "
+                        . format(sw_type))
+                    list_1[sw_index][1] = new_quantity
                     # The new quantity is the same as old quantity
-                    if new_quantity == edit_sandwich_quantity:
+                    if new_quantity == sw_quantity:
                         print("." * 120)
                         # Inform customer
-                        print("NOTE: There are already {} {} sandwiches.".format(new_quantity, edit_sandwich_type))
-                        no_quantity_change_continue = get_string("Do you want to proceed with it (Yes/No)? ")
+                        print("NOTE: There are already {} {} sandwiches."
+                              .format(new_quantity, sw_type))
+                        no_quantity_change_continue = get_string(
+                            "Do you want to proceed with it (Yes/No)? ")
                         # Customer wishes not to change order quantity
                         if no_quantity_change_continue == "Yes":
-                            print("ACTION: Quantity of {} Sandwiches will remain at {}".format(edit_sandwich_type, edit_sandwich_quantity))
+                            print("ACTION: "
+                                  "Quantity of {} Sandwiches will remain at {}"
+                                  .format(sw_type, sw_quantity))
                             new_quantity_loop = False
                             going = False
                         # Customer wishes to enter a different quantity
@@ -500,7 +562,9 @@ def edit_order(list_1, list_2):
                     # The new quantity is the different to the old quantity
                     else:
                         # Display the processed change in quantity
-                        print("ACTION: Quantity of {} Sandwiches: Updated from {} to {}".format(edit_sandwich_type, edit_sandwich_quantity, new_quantity))
+                        print("ACTION: Quantity of {} Sandwiches: "
+                              "Updated from {} to {}"
+                              .format(sw_type, sw_quantity, new_quantity))
                         new_quantity_loop = False
                         going = False
     return None
@@ -512,15 +576,18 @@ def cancel_total_order(list_1):
     :param list_1: list
     :return: None
     """
-    # The customer cannot cancel the total order until they place at least one order
+    # Cannot cancel total order until customer places at least one order
     if len(list_1) == 0:
-        print("ERROR: Unable to cancel all orders as no orders have been made")
+        print("ERROR: "
+              "Unable to cancel all orders as no orders have been made")
         return None
     else:
         running = True
-        while running == True:
+        while running is True:
             # Get the customer's confirmation to cancel order
-            cancel_confirm = get_string("Confirmation: Do you want to the cancel all orders (Yes/No)? ")
+            cancel_confirm = get_string(
+                "Confirmation: Do you want to the "
+                "cancel all orders (Yes/No)? ")
             # Customer wishes to cancel order
             if cancel_confirm == "Yes":
                 # Clear list containing all orders
@@ -531,12 +598,13 @@ def cancel_total_order(list_1):
             # Customer does not wish to cancel the order
             elif cancel_confirm == "No":
                 # Confirm that no orders have been cancelled
-                print("ACTION: No orders have been cancelled. Returning to Main Menu.")
+                print("ACTION: No orders have been cancelled. "
+                      "Returning to Main Menu.")
                 running = False
             # Customer enters an invalid input
             else:
-                print("." * 120)
                 print("ERROR: Invalid Input. Please try again.")
+                print("." * 120)
 
 
 def proceed_checkout(list_1, list_2):
@@ -546,12 +614,14 @@ def proceed_checkout(list_1, list_2):
     :param list_2: list
     :return: string
     """
-    # The customer cannot proceed to checkout until they place at least one order
+    checkout = True
+    # Cannot proceed to checkout until customer places at least one order
     if len(list_1) == 0:
-        print("ERROR: Unable to proceed to checkout as no orders have been made")
+        print("ERROR: "
+              "Unable to proceed to checkout as no orders have been made")
         return None
     else:
-        # Get customer preference for pick up or delivery
+        # Get customer preference for pickup or delivery
         delivery, method = get_customer_details_preferences(list_2)
         # Customer wishes to return to main menu
         if method == "X":
@@ -563,28 +633,29 @@ def proceed_checkout(list_1, list_2):
             print_receipt(list_1, list_2, delivery)
             print()
             print("." * 120)
-            # Get customer confirmation before completing the checkout process
-            checkout = get_string("Confirm and Proceed to Checkout (Yes/No)? ")
-            print("." * 120)
             running = True
-            while running == True:
+            while running is True:
+                # Get customer confirmation before completing the checkout process
+                checkout = get_string("Confirm and Proceed to Checkout (Yes/No)? ")
+                print("." * 120)
                 # Customer wises to complete checkout process
                 if checkout == "Yes":
                     # Confirm that order has been processed
                     print("STEP 4: CHECKOUT")
-                    print("Your Order Has Been Processed. Thank You for Supporting the Marsden Gourmet Sandwich Bar!")
+                    print("Your Order Has Been Processed. "
+                          "Thank You for Supporting the "
+                          "Marsden Gourmet Sandwich Bar!")
                     print("." * 120)
                     running = False
                 # Customer does not wish to complete checkout process
                 elif checkout == "No":
                     # Delete all customer details
                     full_customer_details_list.pop(1)
-                    print("Returning to Main Menu.")
+                    print("All order have been deleted. Returning to Main Menu. ")
                     # Return to main menu
                     running = False
                 # Customer enters an invalid input
                 else:
-                    print("." * 120)
                     print("ERROR: Invalid Input. Please try again.")
         return checkout
 
@@ -618,14 +689,15 @@ def main():
     ]
 
     running = True
-    while running == True:
+    while running is True:
         print("." * 120)
         # Print main menu
         print("MAIN MENU")
         print_two_list(main_menu_list)
         print("." * 120)
         # Get customer's desired operation
-        user_choice = get_string("Select Operation (Enter Corresponding Alphabet): ")
+        user_choice = get_string(
+            "Select Operation (Enter Corresponding Alphabet): ")
         print("."*120)
 
         # Display sandwich menu
@@ -646,7 +718,8 @@ def main():
             cancel_total_order(complete_order_list)
         # Proceed to checkout
         elif user_choice == "F":
-            checkout = proceed_checkout(complete_order_list, full_customer_details_list)
+            checkout = proceed_checkout(
+                complete_order_list, full_customer_details_list)
             if checkout == "Yes":
                 running = False
         # Quit program
