@@ -24,7 +24,7 @@
 		<div class="container">
 			<!-- Header -->
 			<div class="header">
-				<h1 class="header-heading">Marsden Gourmet Sandwich Bar Planning Site</h1>
+				<h1 class="header-heading">Planning Site: Marsden Gourmet Sandwich Bar</h1>
 			</div>
 
 			<!-- Navigation Bar -->
@@ -38,6 +38,7 @@
 					<li><a href="#s5">Sprint 5</a></li>
 					<li><a href="#s6">Sprint 6</a></li>
 					<li><a href="#s7">Sprint 7</a></li>
+					<li><a href="#s8">Sprint 8</a></li>
 					<li><a href="#ri">Relevant Implications</a></li>
 				</ul>
 			</div>
@@ -82,7 +83,7 @@
 	The code associated with each sprint was tested on a separate Python file before being implemented
 	into the main program, where it was tested again. Depending on what I had uncovered during the testing stage,
 	I was then able to tailor the aims of the next sprint. Following the completion of each sprint, the version
-	of the code was committed to Github. This meant that each version of the code was easily accessible throughout
+	of the code was committed to GitHub. This meant that each version of the code was easily accessible throughout
 	the process through GitHub. Furthermore, all the Kanban sprint boards and the overall project backlog are stored on GitHub.
 </p>
 
@@ -92,7 +93,7 @@
 		<!-- Testing Program -->
 		<div class="col">
 			<p>Overview of Commits on GitHub</p>
-			<img class="img-responsive" src="assets/img/" alt="Overview of Commits">
+			<img class="img-responsive" src="assets/img/commit_overview.png" alt="Overview of Commits">
 		</div>
 		<!-- GitHub Push -->
 		<div class="col">
@@ -102,13 +103,13 @@
 	</div>
 
 <!-- Project Backlog -->
-<h2>Initial Project Backlog</h2>
+<h2>Project Backlog</h2>
 <p>Throughout the process of developing this program,
 	I had managed and referred back to a Project Backlog.
 	The Project Backlog was set up as a Kanban board on GitHub
 	and contained a list of tasks ordered by priority, with the
 	tasks of highest priority at the top and those of lowest priority
-	at the bottom. It was regularly updated (ie. new items added,
+	at the bottom. It was regularly updated (i.e. new items added,
 	tasks reshuffled) throughout the project.
 	The following image displays the status of my Project Backlog at the start.
 </p>
@@ -135,12 +136,14 @@
 		<!-- Aim -->
 		<b>Aim</b>
 		<p>In this sprint, I aim to create a basic program which can perform the following: </p>
-		<li>Display the menu (names and prices of each sandwich)</li>
-		<li>Allow the customer to quit the program</li>
+		<ul>
+			<li>Display the menu (names and prices of each sandwich)</li>
+			<li>Allow the customer to quit the program</li>
+		</ul>
 		<br>
 		<p>I also aim for it to contain an option menu for the two features,
 			clear communication and a neat visual design. I would also like all
-			inputs to be efficiently collected, especially in regards to
+			inputs to be efficiently collected, especially in regard to
 			case sensitivity</p>
 
 		<!-- Program Plan -->
@@ -170,7 +173,7 @@
 			menu for two functions: one for printing the sandwich menu
 			and another for exiting the program. It efficiently collects
 			string and integer inputs in a way that is not case-sensitive
-			and displays simple, clear feedback when required (eg. it
+			and displays simple, clear feedback when required (e.g. it
 			notifies the customer of when they enter an invalid input).
 			Furthermore, whenever the customer enters an invalid input,
 			they are given the option to enter that input repeatedly
@@ -179,7 +182,7 @@
 			list and makes clear separation of sections with horizontal
 			rules for ease of use.</p>
 
-		</p>However, there are still numerous areas for improvement.
+		<p>However, there are still numerous areas for improvement.
 			For example, the customer is unable to do anything else but
 			view the menu and exit the program. Hence, my program could
 			benefit from a greater number of features, the most important
@@ -188,7 +191,7 @@
 			that the current mechanism for printing the option menu is rather
 			inefficient (printed as a single multi-line string), which makes
 			it difficult to update. Hence, it may also be worthwhile to develop
-			a more efficient method of printing the menu options (eg. by
+			a more efficient method of printing the menu options (e.g. by
 			creating a function which loops through a list).</p>
 
 		<hr>
@@ -202,21 +205,30 @@
 		<p>In this sprint, I aim to develop the sandwich ordering program
 			so that it is capable of facilitating a greater range of features.
 			In particular, I would like to integrate the following features</p>
-		<li>An avenue for adding sandwiches to the 'cart'</li>
-		<li>An avenue for reviewing all orders (sandwich type and quantity) in the 'cart'</li>
-		<li>A more efficient method of printing the option menu (preferably another 2D list)</li>
+		<ul>
+			<li>An avenue for adding sandwiches to the 'cart'</li>
+			<li>An avenue for reviewing all orders (sandwich type and quantity) in the 'cart'</li>
+			<li>A more efficient method of printing the option menu (preferably another 2D list)</li>
+		</ul>
 		<br>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_a.png" alt="Sprint 2 Plan A">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_b.png" alt="Sprint 2 Plan B">
+			</div>
+		</div>
 
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_2/sprint_2_board.png" alt="Sprint 2 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
 		<div class="col-container">
 			<div class="col">
 				<p>Placing an Order</p>
@@ -229,10 +241,35 @@
 			</div>
 		</div>
 
+		<br>
+
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Can merge the printing 2D lists,any(sandwich_choice_letter in nested_list for nested_list in L): </p>
+		<p>At this stage, the program successfully facilitates four basic features:</p>
+		<ul>
+			<li>Printing the Menu</li>
+			<li>Placing an Order</li>
+			<li>Reviewing All Orders</li>
+			<li>Exiting the Program</li>
+		</ul>
 
+		<br>
+
+		<p>Additionally, the mechanism for displaying the menu is significantly
+			more efficient than in the previous version in that it is displayed
+			by looping through a 2D list as opposed to printing a multi-line string.</p>
+
+		<p>However, there are still numerous areas where there is potential for
+			improvement. For example, there is a potential for a customer to order
+			an unrealistic quantity of sandwiches (eg. 100,000). To avoid this,
+			it would be beneficial for the program to impose a limit for the
+			quantity of sandwiches ordered. Furthermore, it would be beneficial
+			to extending the review feature of the program into a comprehensive
+			checkout process, especially since the order review does not display
+			the individual price or a total charge and does not account for a
+			delivery fee (when appropriate). Furthermore, it would be good to
+			incorporate a confirmation of orders and clear headings
+			throughout the process.</p>
 <hr>
 
 <!-- Sprint Three-->
@@ -241,18 +278,60 @@
 
 		<!-- Aim -->
 		<b>Aim</b>
-		<p>In this sprint, I aim to...</p>
+		<p>In this sprint, I aim to extend the reviewing features of the
+			program by improving/integrating the following:</p>
+		<ul>
+			<li>Getting the customer’s collection preference (i.e. pickup or delivery)</li>
+			<li>Displaying a more detailed review of the orders (e.g. further including individual prices beside quantities, a total charge and a delivery fee if appropriate)</li>
+			<li>A confirmation of orders before proceeding with the checkout process which involves collecting customer details according to collection preference (see table below for details)</li>
+			<li>Clear headings throughout the process</li>
+		</ul>
+
+		<p>Furthermore, I aim to set a limit of 5 sandwiches per type
+			to prevent the customer from ordering unrealistic quantities
+			of sandwiches (eg. 100,000). </p>
+
+		<table>
+			<tr>
+				<th>Collection Preference</th>
+				<th>Customer Details Collected</th>
+			</tr>
+			<tr>
+				<td>Delivery</td>
+				<td>Name, Address, Phone Number</td>
+			</tr>
+			<tr>
+				<td>Pickup</td>
+				<td>Name</td>
+			</tr>
+		</table>
+
+		<br>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
-
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_menu.png" alt="Sprint 3 Plan 1">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_limit.png" alt="Sprint 3 Plan 2">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_accompanying_functions.png" alt="Sprint 3 Plan 3">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_details.png" alt="Sprint 3 Plan 4">
+			</div>
+		</div>
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_3/sprint_3_board.png" alt="Sprint 3 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
 		<div class="col-container">
 			<div class="col">
 				<p>Maximum of Five per Order</p>
@@ -277,11 +356,84 @@
 
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Reflection</p>
-		<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error.png" alt="Sprint 3 Error">
+		<p>The program is now able to facilitate a more sophisticated checkout
+			process, involving collecting the customer’s collection preference
+			(e.g. pickup or delivery), a comprehensive receipt (including
+			individual prices, quantities, a total charge and a delivery fee
+			if appropriate), the confirmation of orders, an avenue for exiting
+			the checkout process and clear headings throughout (e.g. STEP 1:
+			PICKUP OR DELIVERY?, STEP 2: ENTER DETAILS). It also imposes a
+			limit of five sandwiches for each order type.</p>
 
-		<!-- Backlog Grooming -->
-		<b>Backlog Grooming</b>
+		<p>Through an extensive testing and reviewing process,
+			I can identify numerous areas for improvement. </p>
+
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The customer is able to make multiple orders for the same sandwich type.
+				This is problematic and should be addressed promptly, perhaps
+				by checking through the complete order list to see if that sandwich type
+				had not already been ordered before allowing the customer to continue the
+				ordering process.</p>
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_duplicate_orders.png" alt="Sprint 3 Error">
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>This error had come about after attempting to proceed to the
+				checkout when the cart was empty. Through further
+				testing, I found this error to come up also when the customer had
+				attempted to review their orders when their cart was empty.
+				This error resulted from the fact that the program was expecting
+				a value from a list that did not exist. To resolve this, I could
+				make use an if, else statement to ensure that the customer cannot
+				access the order review and	checkout feature without first making
+				at least one order.</p>
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_no_orders_made.png" alt="Sprint 3 Error">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>There is the possibility that a customer enters an invalid phone
+				number or enters inputs that are in varying formats (e.g. considering
+				country code). Hence, it would be ideal to demand a certain format
+				(i.e. with the country code) and then ensure that the customer
+				enters the relevant number of digits (e.g. +64 _ _ _ _ _ _ _ _)</p>
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_invalid_phone_number.png" alt="Sprint 3 Error">
+			</div>
+			<div class="col">
+				<hr>
+				<p>CONCERN</p>
+				<p>I noticed a risky line of code on line 69, which could perhaps be
+				replaced by calling a function which loops through the relevant list
+				and returns an indication of whether the item is or isn't in the list.</p>
+				<td><img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_if_any.png" alt="Sprint 3 Error"></td>
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>AREA FOR IMPROVEMENT</p>
+				<p>The program does not give the customer an opportunity to edit the
+				orders in their cart (e.g. remove orders, change quantities) and
+				exit any time during this process. Again, it would be pertinent
+				to ensure that the customer cannot access this feature if they
+				have not made any orders.</p>
+			</div>
+			<div class="col">
+				<hr>
+				<p>AREA FOR IMPROVEMENT</p>
+				<p>The program does not give the customer the opportunity to cancel
+				their total order (with confirmation) and start a new order. Again,
+				it would be pertinent to ensure that the customer cannot access
+				this feature if they have not made any orders.</p>
+			</div>
+		</div>
+
 <hr>
 
 <!-- Sprint Four-->
@@ -290,18 +442,43 @@
 
 		<!-- Aim -->
 		<b>Aim</b>
-		<p>In this sprint, I aim to...</p>
+		<p>In this sprint, I aim to extend my program by integrating the following:</p>
+		<ul>
+			<li>Ensure that the customer cannot access the reviewing orders and checkout feature without first making at least one order.</li>
+			<li>Ensure that the customer enters their phone number in a valid format (i.e. +64 _ _ _ _ _ _ _ _)</li>
+			<li>Ensure that the customer enters their address in a valid format</li>
+			<li>Ensure that the customer is unable to make more than one order for the same sandwich type</li>
+			<li>Change the risky line of code on line 69 to something more hardy (e.g. a loop)</li>
+			<li>Provide an avenue for the customer to edit the orders in their cart (i.e. remove orders, change quantities) and exit any time during this process. It might also be worthwhile ensuring that the customer cannot access this feature if their cart is empty.</li>
+			<li>Provide an avenue for the customer to cancel their total order (with confirmation) and start a new order. It might also be worthwhile ensuring that the customer cannot access this feature if their cart is empty.</li>
+		</ul>
+		<br>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_1.png" alt="Sprint 4: Planning Image">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_3.png" alt="Sprint 4: Planning Image">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_2.png" alt="Sprint 4: Planning Image">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_4.png" alt="Sprint 4: Planning Image">
+			</div>
+		</div>
 
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_4/sprint_4_board.png" alt="Sprint 4 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
 		<div class="col-container">
 			<div class="col">
 				<p>Cancelling Complete Order</p>
@@ -349,34 +526,134 @@
 		<p>Ensure Valid Address and Phone Number</p>
 		<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_phone_number_address_valid.png" alt="Sprint 4: Valid Address and Phone Number">
 
+		<br>
+		<br>
+
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Reflection</p>
+		<p>At this stage, the program can successfully facilitate an ordering process that ensures that:</p>
+		<ul>
+			<li>The customer enters their phone number in a valid format (i.e. +64 _ _ _ _ _ _ _ _)</li>
+			<li>The customer is unable to make more than one order for the same sandwich type (preventing duplicate orders)</li>
+			<li>There is an avenue for the customer to edit the orders in their cart and cancel all their orders (with confirmation).</li>
+			<li>The customer is unable to access the order review, order editing, cancelling total order and checkout features if their cart is empty.</li>
+		</ul>
+		<br>
+		<p>However, through an extensive testing process, I had identified the following errors:</p>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Customer enters [enter] into integer input, causing program crash</p>
+				<hr>
+				<p>ERROR</p>
+				<p>The program crashed when nothing was entered for the quantity of sandwiches. This crash resulted from
+					the fact that the mechanism of the get_integer() function is to accept any input and cast it as an integer, which
+					was not possible to do for with an entry of nothing. To address this, I might adapt the get_integer functions so that
+					it will not accept any entry (for the quantity) that is not an integer and would continue to ask for an entry
+					until a valid input is provided.</p>
 				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_[enter]_into_int_input.png" alt="Sprint 4: [enter] into int input">
 			</div>
 			<div class="col">
-				<p>Customer enters string into integer input, causing program crash</p>
+				<hr>
+				<p>ERROR<p>
+				<p>The program crashed when a string was entered for the quantity of sandwiches. This crash resulted from
+					the fact that the mechanism of the get_integer() function is to accept any input and cast it as an integer, which
+					was not possible for a string. To address this, I might adapt the get_integer functions so that
+					it will not accept any entry (for the quantity) that is not an integer and would continue to ask for an entry
+					until a valid input is provided.</p>
 				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_string_into_int_input.png" alt="Sprint 4: String into int input">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Customer enters symbols into integer input, causing program crash</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_symbols_into_int_input.png" alt="Sprint 4: Symbols into int input">
+				<hr>
+				<p>ERROR</p>
+				<p>The program crashed when a decimal value was entered for the quantity of sandwiches. This crash resulted from
+					the fact that the mechanism of the get_integer() function is to accept any input and cast it as an integer, which
+					was not possible for a float (i.e. a decimal). To address this, I might adapt the get_integer functions so that
+					it will not accept any entry (for the quantity) that is not an integer and would continue to ask for an entry
+					until a valid input is provided. </p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_decimal_quantity.png" alt="Sprint 4: Accepted Decimal Quantity">
 			</div>
 			<div class="col">
-				<p>Loop does not break</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_edit (didn't stop loop - needed new_quantity_loop = False).png" alt="Sprint 4: Loop did not break">
+				<hr>
+				<p>ERROR</p>
+				<p>The program crashed when symbols were entered for the quantity of sandwiches. This crash resulted from
+					the fact that the mechanism of the get_integer() function is to accept any input and cast it as an integer, which
+					was not possible for symbols. To address this, I might adapt the get_integer functions so that
+					it will not accept any entry (for the quantity) that is not an integer and would continue to ask for an entry
+					until a valid input is provided. </p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_symbols_into_int_input.png" alt="Sprint 4: Symbols into int input">
+				<p></p>
 			</div>
 		</div>
 
-		<!-- Backlog Grooming -->
-		<b>Backlog Grooming</b>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program accepted a negative value for the quantity of sandwiches. In context of sandwich ordering,
+				this could be very problematic. To address this, I might adapt the get_integer() function so that
+				it will not accept any entry (for the quantity) that is not an integer as opposed to just forcing any input
+				provided to become an integer and would continue to ask for an entry until a valid input is provided. </p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_negative_quantity.png" alt="Sprint 4: Accepted Negative Quantity">
+				<p></p>
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program accepted a negative value for the quantity of sandwiches. In context of sandwich ordering,
+				this could be very problematic. To address this, I might adapt the get_quantity() function so that
+				it will only accept integer entries (for the quantity) that are greater than 0. This might be achieved
+				by and if, else statement and would continue to ask for an entry until a valid input is provided. </p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_quantity_zero.png" alt="Sprint 4: Accepted Quantity of Zero">
+			</div>
+		</div>
+
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program accepted an invalid postcode entry (i.e. 1). In context of a sandwich delivery,
+				this could be very problematic. To address this, I might integrate a function which
+				ensures that the postcode entry is 4 digits and will continue to ask for a postcode entry
+				until a valid entry is provided.</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_invalid_postcode accepted.png" alt="Sprint 4: Invalid Postcode Accepted">
+				<p></p>
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program accepted a [space] and nothing as a valid input for a string input region (e.g. input region for name).
+				(The image below displays the outcome - which is the same for both cases) In context of sandwich ordering, this could be very problematic.
+				To address this, I might adapt the get_string() function so that it will strip all entries of spaces and check that they have a length greater than 0.
+				It will continue to ask for an entry until a valid input is provided.</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_space_in_string_input_region.png" alt="Sprint 4: Accepting Spec in String Input Region">
+			</div>
+		</div>
+
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>This error came about from the fact that I had forgotten to break the while loop with 'new_quantity_loop = False'. This was a quick fix,
+					which I had resolved promptly in this sprint. Regardless, this error reminded to be more meticulous in my writing of code.</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_edit_didn't_stop_loop.png" alt="Sprint 4: Loop did not break">
+			</div>
+			<div class="col">
+				<hr>
+				<p>AREA FOR IMPROVEMENT</p>
+				<p>When the customer attempts to place an order, the Sandwich Menu, as well as an option to return to the Main Menu, is displayed.
+				In this sprint, the mechanism for displaying this information was by looping through a 2D list (sandwich_list) and printing it, with the option of
+				returning to the Main Menu being included in sandwich_list, while not actually a sandwich. This meant that when this information
+				was displayed, 'X: Return to Main Menu : $-----" would be printed (i.e. with an unnecessary dollar sign) and that updating the sandwich menu
+				would have been more troublesome. It also added unnecessary complications to the code such as in the feature 'Display Sandwich Menu'
+				(where only the menu is displayed - no ordering) where no option to return to the Main Menu was necessary. In this case, printing out the sandwich menu
+				needed an extra step of looping through all nested lists in sandwich_list except the last (which contained the option to return the to Main Menu)</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_menu_with_dollar_sign_next_to_X.png" alt="Sprint 4: Unnecessary $--">
+			</div>
+		</div>
+
 <hr>
 
 <!-- Sprint Five-->
@@ -385,26 +662,42 @@
 
 		<!-- Aim -->
 		<b>Aim</b>
-		<p>In this sprint, I aim to...</p>
+		<p>In this sprint, I aim to improve the program in the following ways:</p>
+		<ul>
+			<li>Integrating validation against strings, symbols, decimals and nothing into the get_integer() function.</li>
+			<li>Integrating validation against nothing and [space] in the get_string() function</li>
+			<li>Incorporating DocTypes for all functions</li>
+			<li>Ensuring that the customer cannot request a sandwich quantity that is negative of zero</li>
+			<li>Incorporating comments consistently throughout the code</li>
+			<li>Ensuring that the customer enters a postcode with four digits.</li>
+		</ul>
+		<br>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_plan_1.png" alt="Sprint 5: Planning">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_plan_2.png" alt="Sprint 5: Planning">
+			</div>
+		</div>
 
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_5/sprint_5_board.png" alt="Sprint 5 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Commenting</p>
+				<p>Incorporating Comments throughout Code (Example)</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_commenting.png" alt="Sprint 5: Commenting">
 			</div>
 			<div class="col">
-				<p>Doctypes</p>
+				<p>Incorporating DocTypes for each Function (Example)</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_doctype.png" alt="Sprint 5: Doctypes">
 			</div>
 		</div>
@@ -415,76 +708,134 @@
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_postcode_4_digits.png" alt="Sprint 5: Ensure Postcode has 4 Digits">
 			</div>
 			<div class="col">
-				<p>Validate Against inputs of [space] and [enter]</p>
+				<p>Validation Against inputs of [space] and nothing for string input regions</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_space_nothing.png" alt="Sprint 5: Validate Against inputs of [space] and [enter]">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Validate Against String Inputs where Integer Input is required</p>
-				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_validate_against_string_in_int_input.png" alt="Sprint 5: Validate Against a String Inputs where Integer input is required">
+				<p>Validation Against strings, symbols, decimals, [space] and nothing in integer input regions</p>
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_validate_against_strings_symbols_decimals_nothing_[space].png" alt="Sprint 5: Validate Against a strings, symbols, decimals, nothing, [space]">
 			</div>
 			<div class="col">
-				<p>Ensure Sandwich Quantities are greater than 0</p>
-				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_quantity_not_0.png" alt="Sprint 5: Ensure Sandwich Quantities are greater than 0">
+				<p>Printing 'Return to Main Menu' Option separately from the sandwich list</p>
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_return_main_menu_option_separate.png" alt="Sprint 5: 'Return to Main Menu' Option separately from the sandwich list">
 			</div>
 		</div>
 
+		<div class="col-container">
+			<div class="col">
+				<p>Ensuring Sandwich Quantities are greater than 0</p>
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_test_quantity_greater_than_0.png" alt="Sprint 5: Ensure Sandwich Quantities are greater than 0">
+			</div>
+		</div>
+
+		<br>
+
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Reflection</p>
+		<p>At this stage, the program is able to function in such a way that:</p>
+		<ul>
+			<li>The program will not crash when strings, symbols, decimals or nothing are entered into an integer input region and instead will notify the customer that their input is invalid and will request that the input be re-entered (this continues until a valid entry is provided)</li>
+			<li>The program will not accept neither a [space] nor nothing for string input regions and instead will notify the customer of their error, also requesting that the input be re-entered (this continues until a valid entry is provided)</li>
+			<li>The customer is unable to request a sandwich quantity that is less than or equal to zero</li>
+			<li>The program will not accept a postcode entry that does not have four digits and will continue to request the entry until a valid input is provided.</li>
+		</ul>
+		<br>
+
+		<p>Furthermore, commenting and DocTypes have been incorporated throughout the code.</p>
+		<p>However, through an extensive testing process, I have also identified the following errors:</p>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Program Crash when a Customer Attempts to edit a Nonexistent Order</p>
+				<hr>
+				<p>ERROR</p>
+				<p>The program crashes when a customer attempts to edit an order that they have not made.
+				In context of sandwich ordering, this could be problematic. To address this, I may adapt the program
+				so that when a customer requests to edit their orders and enters a letter that (supposedly) corresponds to
+				one of their orders, the program will find the index of that letter in a list of all the alphabets possible,
+				before using an if, else statement to check whether the index number is less than the length of their list of total orders
+				in which case their request is valid. Otherwise, the program should notify the user of the error and request
+				that the customer re-enters the input until a valid input is provided.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_error_select_nonexisting_order_for_edit.png" alt="Sprint 5: Error. Attempting to edit nonexistent order">
 			</div>
 			<div class="col">
-				<p>Program will not Return to Main Menu when a Customer selects X during "Order Sandwich"</p>
+				<hr>
+				<p>ERROR</p>
+				<p>The program will not return to the Main Menu when a customer selects X and instead, will falsely
+				state that the customer has entered an invalid input. This error has arisen from the fact that the code has:</p>
+				<code>if sw_choice_letter == "X":</code>
+				<br>
+				<p>____<code>running = False</code></p>
+				<p>which simply breaks the while loop (as opposed to exiting the function). To address this, I might replace
+				'running = False' with 'return None'</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_error_X_not_returning_to_main_menu.png" alt="Sprint 5: Error. Not returning to main menu under 'order sandwich'">
 			</div>
 		</div>
 
-		<p>Style Errors from Pycharm</p>
+		<b>Style Errors</b>
+		<p>I then proceeded to check my code for style errors by both inspecting the error report from PyCharm and placing it through the code style checker codeWOF.
+			I then acted upon the suggestions offered by both. An outline of this process is shown below.</p>
+
+		<b>Style Errors from Pycharm</b>
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>This style error arose from the fact that I had not included an extra blank line at the bottom of my code. I could address this
+				by adding a blank line to the bottom of the code.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_no_newline_at_end_of_file.png" alt="Sprint 5: Pycharm Style Error - No newline at end of file">
 			</div>
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>This style error arose from the fact that I had consistently used <code>if variable == True</code> as opposed to the more 'acceptable' format of <code>if variable is True</code>.
+				I could address this issue by replacing all the '==' conditions for booleans (eg. True, False) with 'is'.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_running==True.png" alt="Sprint 5: Pycharm Style Error - == True">
 			</div>
 		</div>
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>This style error arose from the fact that a number of my lines of code exceeded the 'acceptable' maximum of 120 characters. To address this issue, I might shorten variable names, cut down
+					on the length of some messages and also split some code onto multiple lines using a backslash (\)</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_line_too_long.png" alt="Sprint 5: Pycharm Style Error - Line too long ">
 			</div>
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>These style errors have arisen from the fact that the variables 'quantity', 'phone_number', 'delivery' and 'method' were only assigned values within a while loop,
+				so that in the event that the condition for the while loop was not fulfilled, the variable would be referenced when it wouldn't have a value.
+				I could address this issue by assigning each variable a quantity before their respective while loops (ie. <code>quantity = [value]</code>, <code>phone_number = [value]</code>,
+				<code>delivery = [value]</code>, <code>method = [value]</code>.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_reference_before_assignment.png" alt="Sprint 5: Pycharm Style Error - Reference before assignment ">
 			</div>
 		</div>
 
-		<p>Style Errors from codeWOF</p>
+		<b>Style Errors from codeWOF</b>
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>As compared to PyCharm, codeWOF was tighter in regard to what the maximum number of characters was 'acceptable' for any given line. It set a maximum of 79 characters as opposed to 120.
+					Hence, I received this style error. To meet these requirements, I might also shorten variable names, cut down the length of messages and split code onto multiple lines using a backslash (\),
+					being conscious of keeping within this maximum.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_cc_line_too_long.png" alt="Sprint 5: codeWOF Style Error - Line too long">
 			</div>
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>This style error arose from the fact that I had not included a docstring at the top of my code outlining the purpose
+					of the program. To address this, I might add a docstring to the top of my code.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_cc_file_docstring.png" alt="Sprint 5: codeWOF Style Error - Start file with docstring">
 			</div>
+		</div>
+
+		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<hr>
+				<p>This style error resulted from the fact that the DocTypes for some of my functions did not end with a full stop. To address this,
+				I made sure that each DocType ended with a full stop.</p>
 				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_cc_docstring_end_period.png" alt="Sprint 5: codeWOF Style Error - Docstrings must end with a period">
 			</div>
 		</div>
-		<!-- Backlog Grooming -->
-		<b>Backlog Grooming</b>
+
 
 <hr>
 
@@ -494,18 +845,32 @@
 
 		<!-- Aim -->
 		<b>Aim</b>
-		<p>In this sprint, I aim to...</p>
+		<p>In this sprint, I aim to develop the program in the following ways: </p>
+		<ul>
+			<li>Fixing all style errors identified by Pycharm and codeWOF</li>
+			<li>Ensuring that the program will return to the Main Menu when the customer selects "X" after selecting the 'Place an Order' feature</li>
+			<li>Ensuring that the program will not crash if the customer attempts to edit an order they have not made, instead making it so that the
+				program will inform them of the error and request for the input to be re-entered (this process repeating until a valid entry is provided).</li>
+		</ul>
+		<br>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_6/sprint_6_plan_1.png" alt="Sprint 6: Planning">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_6/sprint_6_plan_2.png" alt="Sprint 6: Planning">
+			</div>
+		</div>
 
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_6/sprint_6_board.png" alt="Sprint 6 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
 
 		<div class="col-container">
 			<div class="col">
@@ -531,10 +896,29 @@
 
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Reflection</p>
+		<p>At this stage, the program is in such a state that:</p>
+		<ul>
+			<li>The code adheres to standard Python conventions according to PyCharm and codeWOF</li>
+			<li>The program returns to the Main Menu when the customer selects X in the 'Place an Order' feature</li>
+			<li>It will not crash if the customer attempts to make an order for a non-existent order</li>
+		</ul>
 
-		<!-- Backlog Grooming -->
-		<b>Backlog Grooming</b>
+		<p>However, there are still numerous areas for improvement. Upon the inspection of my code, my teacher advised that I do the following:</p>
+		<ul>
+			<li>Change the names of variables and function parameters so that they more clearly reflect what they represented (e.g. 'sandwich_list' instead of 'list_1').</li>
+			<li>Simplify the code,especially so that each feature can be accessed independently (e.g. the feature which collects customer details into a distinct function, as opposed to being part of the checkout feature)</li>
+			<li>Separate all code associated with validation into their own distinct function (as opposed to being in amongst the other functions). Specifically, he recognised that
+			there was a lot of repetition of code in the general structure of: <pre><code>
+x = input("message")
+if x == value_a:
+	-----
+elif x == value_b:
+	-----
+else:
+	print("ERROR: Invalid Input.")</code></pre>
+			which aimed to validate inputs that had a fixed set of acceptable values (e.g. 'yes' or 'no'), but could be replaced with a separate function.</li>
+
+		</ul>
 
 <hr>
 
@@ -544,50 +928,238 @@
 
 		<!-- Aim -->
 		<b>Aim</b>
-		<p>In this sprint, I aim to...</p>
+		<p>In this sprint, I aim to develop the program in the following ways: </p>
+		<ul>
+			<li>Ensuring that all code associated with validation has its own distinct function (as opposed to being amongst other functions) for inputs that have a fixed set of acceptable values (e.g. 'yes' and 'no')</li>
+			<li>Changing the names of some variables and function parameters so that they more clearly reflect what they represent</li>
+			<li>Simplifying the code so that each feature can be accessed independently (esp. having the feature that collects customer details separate to the function that facilitates the checkout feature)</li>
+		</ul>
 
 		<!-- Program Plan -->
 		<b>Program Plan</b>
-		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="" alt="">
+		<div class="col-container">
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_plan_1.png" alt="Sprint 7: Planning">
+			</div>
+			<div class="col">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_plan_2.png" alt="Sprint 7: Planning">
+			</div>
+		</div>
 
 		<!-- Planning Board -->
 		<b>Planning Board: In Progress</b>
 		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_7/sprint_7_board.png" alt="Sprint 7 Kanban Board">
 
 		<!-- Testing Program -->
-		<b>Testing Full Program</b>
+		<b>Testing Completed Developments</b>
+		<div class="col-container">
+			<div class="col">
+				<p>The 'Enter Details' feature is separate from the 'Proceed to Checkout' feature</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_test_separate_checkout_customer_details.png" alt="Sprint 7: Test">
+			</div>
+			<div class="col">
+				<p>NOTE: Changing the names of variables and function parameters, as well as having a separate validation function for inputs with a fixed set of
+					acceptable values, does not directly affect how the ordering program functions (really only affects the code) so 'testing' in that sense,
+					is not possible for displaying these developments.</p>
+			</div>
+		</div>
+
+		<br>
+
+		<!-- Reflection -->
+		<b>Reflection</b>
+		<p>At this stage, the code for the program possesses the following characteristics: </p>
+		<ul>
+			<li>A separate validation function for inputs that have a fixed set of acceptable values (e.g. 'yes' or 'no')</li>
+			<li>Variables and function parameters that have more comprehensive names that more clearly reflect what they represent (e.g. 'sandwich_list' rather than 'list_1'</li>
+			<li>The function facilitating the checkout feature no longer calling on the function facilitating the collection of customer details.</li>
+		</ul>
+		<p>However, through an extensive testing process, I have identified numerous errors and areas for improvement: </p>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program does not recognise 00000000 as 8 characters (as is required for a valid phone number entry).
+				This has resulted from the fact that the phone number entry has been entered as an integer input
+				which removes all leading zeros. To address this, I might change the program so that the phone number
+				entry is accepted as a string, then checked to be an integer, before being checked for length and returned if valid.</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_phone_number_00000000.png" alt="Sprint 7: ">
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program does not recognise 0000 as 4 characters (as is required for a valid postcode entry)
+				This has resulted from the fact that the postcode entry has been entered as an integer input
+				which removes all leading zeros. To address this, I might change the program so that the postcode
+				entry is accepted as a string, then checked to be an integer, before being checked for length and returned if valid.</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_postcode_0000.png" alt="Sprint 7: ">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program accepts entries containing numbers for string input regions where there is no fixed set of acceptable values (e.g. name, suburb, street).
+				This has occurred as the integer input has been cast as a string, without actually checking that every character is a letter. To address this,
+				I might adapt my get_string() function so that it loops through each character in the input (which has been stripped of spaces and made into upper case),
+				and checking if it is in the alphabet_list (which contains all the letters in the alphabet). If any character cannot be found in
+				alphabet_list, it is invalid and the program will take the due action of informing the customer and requesting a re-enter.</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_entering_integers_for_free_string_input_regions.png" alt="Sprint 7: ">
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program does not provide the customer with the opportunity to start another order after completing the checkout process for one order.
+				To address this, I might add a feature after the code associated with the checkout process, asking if the customer wishes to
+				make another order. The code would then receive input from the user, ending the program if the customer selects 'no' and allowing the program to repeat
+				(also clearing all customer and order details from the previous order) if the customer selects 'yes'.</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_end_checkout_no_option_for_new_order.png" alt="Sprint 7: ">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program does not account for the $3 delivery fee that is due for an order with delivery.
+				This has occurred as the original method I used for ensuring that the delivery fee was considered was complicated, involving
+				the use of the variable 'delivery' which was supposedly assigned either True or False directly after the customer had
+				selected their collection preference. However, as the program has been edited and developed, the code associated with this process was somehow
+				deleted so that the variable 'delivery' was simply assigned the default value of 'False'. Perhaps the program would benefit from simplifying
+				this process (e.g. by checking if the collection preference set in the full_customer_details_list is 'Delivery' or 'Pickup')
+				</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_no_delivery_fee.png" alt="Sprint 7: ">
+			</div>
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program unnecessarily clears all the customer's details when the customer chooses to exit the checkout process part-way
+				and return to the main menu. To address this, I will remove the <code>full_customer_details_list.pop(1)</code>
+				that has been placed under <code>if checkout == "No"</code> (i.e. after the customer has indicated that they do not wish
+				to proceed through the checkout).</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_continue_checkout_no_details_deleted.png" alt="Sprint 7: ">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>AREA FOR IMPROVEMENT</p>
+				<p>The program could do with some clearer compartmentalisation for the sake of usability. To achieve this,
+				I might incorporate more horizontal rules.</p>
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_compartmentalisation.png" alt="Sprint 7: ">
+			</div>
+		</div>
+<hr>
+
+<!-- Sprint Eight-->
+<h1 id="s8">Sprint Eight</h1>
+		<hr>
+
+		<!-- Aim -->
+		<b>Aim</b>
+		<p>In this sprint, I aim to develop the program in the following ways: </p>
+		<ul>
+			<li>Ensuring that a $3 delivery is accounted for when the customer selects delivery as their collection preference</li>
+			<li>Ensuring that the customer details are not cleared if the customer chooses to exit the checkout process half-way</li>
+			<li>Providing the customer with the option of starting a new order once they complete the checkout process for one order.</li>
+			<li>Validating against inputs with characters that are not letters for string input regions where there isn't a fixed set of
+			acceptable values (e.g. name, suburb, street)</li>
+			<li>Ensuring the program recognises the leading zeros of postcode and phone number entries that start with zero(s) as characters (e.g. 00123 as 5 characters, not 3)</li>
+			<li>Developing the program so that there is clearer compartmentalisation</li>
+		</ul>
+		<br>
+
+		<!-- Program Plan -->
+		<b>Program Plan</b>
+		<div class="col-container">
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_1.png" alt="Sprint 8: Planning">
+			</div>
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_2.png" alt="Sprint 8: Planning">
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_3.png" alt="Sprint 8: Planning">
+			</div>
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_4.png" alt="Sprint 8: Planning">
+			</div>
+		</div>
+
+		<!-- Planning Board -->
+		<b>Planning Board: In Progress</b>
+		<img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/sprint_8/sprint_8_board.png" alt="Sprint 8 Kanban Board">
+
+		<!-- Testing Program -->
+		<b>Testing Completed Developments</b>
 
 		<div class="col-container">
 			<div class="col">
 				<p></p>
-				<img class="img-responsive" src="assets/img/sprint_7/" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_leading_zeros_phone_number_postcode.png" alt="Sprint 8: Recognising Leading Zeros">
 			</div>
 			<div class="col">
 				<p></p>
-				<img class="img-responsive" src="assets/img/sprint_6/" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_not_deleting_customer_details.png" alt="Sprint 8: Not Deleting Customer Details After Existing Checkout Partway">
+			</div>
+		</div>
+
+		<div class="col-container">
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_option_to_make_another_order_after_checkout.png" alt="Sprint 8: Option of Starting a New Order After Checkout Completion">
+			</div>
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_numbers_in_string_input_regions.png" alt="Sprint 8: Validating Against Inputs with Non-Letter Characters In String Input Regions">
+			</div>
+		</div>
+
+		<div class="col-container">
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_compartmentalisation.png" alt="Sprint 8: Compartmentalisation">
+			</div>
+			<div class="col">
+				<p></p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_delivery_fee.png" alt="Sprint 8: Ensuring $3 Delivery Fee is Considered">
 			</div>
 		</div>
 
 		<!-- Reflection -->
 		<b>Reflection</b>
-		<p>Reflection</p>
+		<p>During the testing process for this sprint, I had encountered the following problem (which has consequently been resolved).</p>
 
-		<!-- Backlog Grooming -->
-		<b>Backlog Grooming</b>
+		<p>The program would falsely categorise inputs with whitespaces between characters as invalid, even if they consisted entirely of letter characters (e.g. 'Happy St').
+			As seen in the image below, I had run a test to identify what the program received, only to discover that the spaces had not been removed. This meant that when
+			the program looped through each character in the input to check if it was a letter, it identified the whitespace, which was not a letter. After some inspection, I realised that
+			this might have resulted from the fact that I had used the <code>.strip()</code> method to remove whitespaces (which only acts to remove leading and trailing
+			whitespaces, not whitespaces between characters. To address this, I replaced the <code>.strip()</code> with <code>.replace(" ", "")</code>.</p>
+		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping_test.png" alt="Sprint 8: ">
+		<br>
+		<p>After resolving this error, the following outcome was achieved: </p>
+		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping.png" alt="Sprint 8: ">
+		<br>
+		<!-- Testing Program -->
+		<b>Testing Full Program</b>
+		<p>At this stage, I would declare the sandwich ordering program to be fully functional.</p>
 
 <hr>
 
 <!-- Relevant Implications -->
 <h1 id="ri"> Relevant Implications</h1>
-<p>Relevant Implications are the possible effects or issues that
-	may result from the creation of a digital product. There are
-	three main relevant implications I have identified as pertinent
-	for this program. These include sustainability and future proofing,
+<p>Relevant Implications are the possible effects or issues that may result from the creation of a digital product. There are
+	three main relevant implications I have identified as pertinent for this program. These include sustainability and future proofing,
 	functionality and usability.</p>
 
-    <!-- Future Proofing -->
         <table>
-		<tr>
+        <tr>
+			<!-- Sustainability and Future Proofing -->
 			<th>Sustainability and Future Proofing</th>
 			<th></th>
 		</tr>
@@ -596,29 +1168,23 @@
 			<td>Addressal</td>
 		</tr>
         <tr>
-            <td>Future proofing refers to the ease at which
-				a digital product can be updated and maintained.
-				A digital product with a high degree of future proofing
-				will possess a ‘modular’ structure, will follow
-				widely-understood conventions, and will be easily
-				understood and modifiable by others.</td>
-            <td>The relevant implication of Sustainability and Future Proofing
-				has been addressed in numerous ways throughout the program.
-				For example, comments have been integrated throughout the code
-				and the program has undergone extensive testing through code
-				checkers to ensure that it follows the conventions of the language.
-				The program has also been constructed in a modular manner,
-				consisting of several smaller, constituent functions. This means that
-				new features can be added easily (ie. by creating new functions)
-				without having to alter any pre-existing features. Breaking the program
-				down into these smaller units also makes it easier to comprehend.</td>
+            <td>Future proofing refers to the ease at which a digital product can be updated and maintained.
+				A digital product with a high degree of future proofing will possess a ‘modular’ structure, will follow
+				widely-understood conventions, and will be easily understood and modifiable by others.</td>
+            <td>The relevant implication of Sustainability and Future Proofing has been addressed in numerous ways throughout the program.
+				<ul>
+					<li>COMMENTING: Comments were integrated throughout the code. This ensures that if the code was to pass into the hands of another person, it would be more easily and quickly understood.</li>
+					<br>
+					<li>CODE CHECKING: The placement of the code through code checkers (e.g. PyCharm error checking system, codeWOF) was used to identify style errors (and then fix them). This was done to ensure that the code followed the conventions of the language and thus, would be more easily understood if passed to another person.</li>
+					<br>
+					<li>MODULAR STRUCTURE: The program was constructed with a modular structure (i.e. consisting of several small, constituent functions). This was done to ensure that new features can be both added (i.e. by creating new functions) and edited without having to alter any other pre-existing features. The compartmentalisation of the code into smaller units also makes it easier to comprehend.</li>
+					<br>
+					<li>DOCTYPES: DocTypes were integrated into each function, as well as to the top of the code, describing the purpose of each function and the code (respectively). DocTypes in functions also define the parameters of the function and their data types, which enables the person working on the code to quickly understand how each function acts.</li>
+				</ul>
+			</td>
         </tr>
-        </table>
-    <br>
-
-    <!-- Functionality -->
-        <table>
-		<tr>
+        <tr>
+			<!-- Functionality -->
 			<th>Functionality</th>
 			<th></th>
 		</tr>
@@ -627,22 +1193,19 @@
 			<td>Addressal</td>
 		</tr>
         <tr>
-            <td>Functionality refers to the level of efficiency with which a digital
-				product performs its function. A digital product with a high degree of
-				functionality works properly. In particular, a program with high functionality
+            <td>Functionality refers to the level of efficiency with which a digital product performs its function. A digital
+				product with a high degree of functionality works properly. In particular, a program with high functionality
 				will exhibit extensive validation, will perform calculations correctly and will not crash. </td>
-            <td>The relevant implication of Functionality has been addressed in this program
-				through regular, comprehensive testing followed by the identification and fixing
-				of any errors found (as has been discussed extensively in my reflections). Furthermore,
-				all inputs have been validated so that any invalid inputs will not result in a program crash,
-				but will instead be met with a polite message asking the User to re-enter the input.</td>
+            <td>The relevant implication of Functionality has been addressed in this program in two main ways:
+				<ul>
+					<li>TESTING: Throughout the development of this program, I had performed regular, comprehensive testing, which allowed me to identify errors and areas for improvement, which I then acted upon to improve the program's usability.</li>
+					<br>
+					<li>VALIDATION: All inputs have been validated so that the entering of invalid inputs will not result in a program crash, but will instead be met with a polite message requesting that the customer re-enters the input (which continues until a valid input is provided)</li>
+				</ul>
+			</td>
         </tr>
-        </table>
-    <br>
-
-    <!-- Usability -->
-        <table>
-		<tr>
+        <tr>
+			<!-- Usability -->
 			<th>Usability</th>
 			<th></th>
 		</tr>
@@ -651,67 +1214,32 @@
 			<td>Addressal</td>
 		</tr>
         <tr>
-            <td>Usability refers to the degree of difficulty a user experiences during their interaction with
-				a digital product. A digital product with a high degree of usability is ‘user-friendly’. It
-				provides clear, appropriate feedback that is easily understood by the User, prevents errors,
-				confirms the User’s actions, allows the User to gauge their current status and creates outputs
+            <td>Usability refers to the degree of difficulty a user experiences during their interaction with a digital product. A digital
+				product with a high degree of usability is ‘user-friendly’. It provides clear, appropriate feedback that is easily understood
+				by the User, confirms the User’s actions, allows the User to gauge their current status and creates outputs
 				that do not use complex or technical language.</td>
             <td>The relevant implication of Usability has been addressed in this program in several ways.
-				Firstly, clear headings such as ‘Order Review’ and ‘Order Menu’ have been integrated throughout
-				the program to ensure that the User is always aware of where they are in a process. Furthermore,
-				plain, polite language (as opposed to complex or technical language) has been used throughout the
-				program. In response to all invalid inputs, the program issues a polite error message asking the
-				user to reenter that input and in this process, often highlights the problem (eg. input does not
-				fulfil the appropriate number of digits). Also, each of the User’s actions is met with appropriate
-				feedback/confirmation and the User is always provided with an avenue to ‘exit’ any particular process
-				and return to the main menu should they wish to. </td>
+				<ul>
+					<li>COMPARTMENTALISATION: Horizontal rules have been integrated throughout the program to achieve a degree of compartmentalisation. The objective with this was to ensure ease of use for the customer.</li>
+					<br>
+					<li>HEADINGS: Clear headings (e.g. "STEP 1: CONFIRM ORDER AND DETAILS") have been integrated throughout the program to ensure that the customer is always aware of where they are in a process.</li>
+					<br>
+					<li>PLAIN LANGUAGE: Plain, polite language (as opposed to complex or technical language) has been used throughout the program to ensure that communication with the customer is always clear and effective.</li>
+					<br>
+					<li>CONTINUOUS FEEDBACK: Each of the customer’s actions is met with clear and appropriate feedback (e.g. "ERROR: Invalid Input.") when an error has occurred, and a statement of confirmation for all customer actions (e.g."ACTION: All orders have been cancelled")</li>
+					<br>
+					<li>AVENUE TO 'EXIT': During the development of this program, I made a deliberate effort to ensure that a customer would always be provided with an avenue to ‘exit’ the process they are currently in and return to the main menu whenever they wish. </li>
+					<br>
+				</ul>
+			</td>
         </tr>
         </table>
- <hr>
 
-				<hr>
-					<!-- Responsive images -->
-					<h3>Example image placements</h3>
-					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
-					<img class="img-responsive" src="assets/img/place_holder.png" alt="">
-				<hr>
+		</div>
 
-
-					<h3>Ordered list</h3>
-					<p>Ordered lists are used to markup lists where list items require numbering.</p>
-					<ol>
-						<li>Hendrerit in vulputate velit esse</li>
-						<li>Olestie consequat</li>
-						<li>Vel illum dolore eu feugiat</li>
-						<li>Nulla facilisis at vero eros</li>
-						<li>Accumsan et iusto odio</li>
-					</ol>
-					<hr>
-
-
-					<h3>Inline list</h3>
-					<p>You can make the list display inline using the <code>list-inline</code> class.</p>
-					<ul class="list-inline">
-						<li>One</li>
-						<li>Two</li>
-						<li>Three</li>
-						<li>Four</li>
-					</ul>
-					<hr>
-
-					<h3>Buttons</h3>
-					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
-					<p><a href="#" class="btn">Submit</a></p>
-					<hr>
-
-				<h3>Links</h3>
-				<a href="#">quis nostrud exerci tation ullamcorper</a>
-			</div>
-
-			<div class="footer">
-				&copy; Copyright Valerie Howe 2023
-			</div>
-
+		<div class="footer">
+			&copy; Copyright Valerie Howe 2023
+		</div>
 
 		</div>
 	</body>

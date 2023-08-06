@@ -10,10 +10,24 @@ alphabet_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
 
 # Declare List for Storing Customer Details
 full_customer_details_list = [
-    ["Pickup or Delivery:", "Name:", "Address:", "Phone Number:"]
+    ["Pickup or Delivery", "Name", "Address", "Phone Number"]
 ]
 
 order_letters_list = []
+
+
+def check_all_characters_are_strings(input_for_checking):
+    """Check that each character in the input is a string.
+
+    :param input_for_checking: unknown
+    :return: boolean
+    """
+    # Loop through each character in the input
+    for char in input_for_checking.upper():
+        # Check if the character is not in alphabet_list
+        if char not in alphabet_list:
+            return False
+    return True
 
 
 def get_string(message):
@@ -25,12 +39,16 @@ def get_string(message):
     running = True
     while running is True:
         # Get input
-        my_string = input(message)
+        my_string = input(message).capitalize()
         # Remove spaces from input
-        my_string_stripped = my_string.strip()
+        my_string_stripped = my_string.replace(" ", "")
         # Ensure input length is greater than 0
         if len(my_string_stripped) > 0:
-            return str(my_string).capitalize()
+            if check_all_characters_are_strings(my_string_stripped) is True:
+                return my_string
+            else:
+                print("ERROR: Invalid Input. Please try again.")
+                print("." * 120)
         else:
             print("ERROR: Input is required. ")
             print("." * 120)
@@ -58,7 +76,7 @@ def get_quantity(message):
     """Get a quantity that it is greater than 0 and lower than 5.
 
     :param message: string
-    :return: integer
+    :return: quantity: integer
     """
     quantity = 0
     running = True
@@ -116,7 +134,7 @@ def get_valid_input(valid_inputs_list, message):
 
     :param valid_inputs_list: list
     :param message: string
-    :return: boolean
+    :return: item: string
     """
     running = True
     while running is True:
@@ -131,20 +149,20 @@ def get_valid_input(valid_inputs_list, message):
             print("." * 120)
 
 
-def get_order_total(orders_list, delivery):
+def get_order_total(orders_list):
     """Calculate the total charge for all the orders.
 
     :param orders_list: list
-    :param delivery: boolean
-    :return: integer
+    :return: order total: integer
     """
     order_total = 0
     # Loop through total order and add costs according to quantity
     for i in range(0, len(orders_list)):
         order_total += orders_list[i][3]
     # Add $3 delivery fee if customer chooses delivery
-    if delivery is True:
-        order_total += 3
+    if len(full_customer_details_list) == 2:
+        if full_customer_details_list[1][0] == "Delivery":
+            order_total += 3
     return order_total
 
 
@@ -173,7 +191,7 @@ def print_customer_details(customer_details_list):
     # Loop through the customer details list
     for i in range(0, len(customer_details_list[1])):
         # Print customer details from the list
-        output = "{:40} {:<80}"\
+        output = "{:64}: {:<80}"\
             .format(customer_details_list[0][i],
                     customer_details_list[1][i])
         print(output)
@@ -184,67 +202,73 @@ def get_valid_postcode(message):
     """Ensure that the customer's postcode entry is 4 digits long.
 
     :param message: string
-    :return: integer
+    :return: valid_postcode: integer
     """
     running = True
     while running is True:
-        postcode_entry = get_integer(message)
-        valid_postcode = postcode_entry
-        # Count the number of digits in the postcode entry
-        digits = 0
-        while postcode_entry > 0:
-            digits += 1
-            postcode_entry = postcode_entry//10
-        # Postcode entry has four digits
-        if digits == 4:
-            return valid_postcode
-        # Postcode entry does not have four digits
+        postcode_entry = input(message)
+        # Ensure input is an integer
+        if postcode_entry.isdigit() is True:
+            valid_postcode = str(postcode_entry)
+            # Place each digit in the postcode entry into a list
+            postcode_list = [x for x in str(postcode_entry)]
+            # Postcode entry has four digits
+            if len(postcode_list) == 4:
+                return valid_postcode
+            # Postcode entry does not have four digits
+            else:
+                print("ERROR: Invalid Input: 4 digits were expected. "
+                      "Please try again.")
+                print("." * 120)
+        # Give error message if input is not an integer
         else:
-            print("ERROR: Invalid Input: 4 digits were expected. "
-                  "Please try again.")
+            print("ERROR: Invalid Input. Please try again.")
             print("." * 120)
 
 
-def get_valid_phone_number():
+def get_valid_phone_number(message):
     """Get number of digits in the customer's phone number entry.
 
     :return: integer
     """
-
-    going = True
-    while going is True:
-        # Get phone number entry
-        phone_number_entry = get_integer("Phone Number: (+64) ")
-        phone_number = phone_number_entry
-        # Count the number of digits in the phone number entry
-        digits = 0
-        while phone_number_entry > 0:
-            digits += 1
-            phone_number_entry = phone_number_entry // 10
-        if digits == 8:
-            valid_phone_number = "+64 " + str(phone_number)
-            return valid_phone_number
+    running = True
+    while running is True:
+        phone_number_entry = input(message)
+        valid_phone_number = "+64 " + str(phone_number_entry)
+        # Ensure input is an integer
+        if phone_number_entry.isdigit() is True:
+            # Place each digit in the phone number entry into a list
+            phone_number_list = [x for x in str(phone_number_entry)]
+            # Phone number entry has eight digits
+            if len(phone_number_list) == 8:
+                return valid_phone_number
+            # Phone number entry does not have eight digits
+            else:
+                print("ERROR: Invalid Input: 8 digits were expected. "
+                      "Please try again.")
+                print("." * 120)
         else:
-            print("ERROR: Invalid Input: "
-                  "8 digits were expected. Please try again.")
+            print("ERROR: Invalid Input. Please try again.")
+            print("." * 120)
 
 
-def print_receipt(orders_list, customer_details_list, method):
+def print_receipt(orders_list, customer_details_list):
     """Print receipt.
 
     :param orders_list: list
     :param customer_details_list: list
-    :param method: boolean
     :return: None
     """
     print("STEP 1: CONFIRM ORDER AND DETAILS")
     print()
     # Print customer details
     print("YOUR DETAILS")
+    print("*" * 90)
     print_customer_details(customer_details_list)
+    print("*" * 90)
     print()
     # Print full review of orders
-    review_orders(orders_list, method)
+    review_orders(orders_list)
     return None
 
 
@@ -287,8 +311,6 @@ def order_sandwich(sw_list, orders_list):
     # Customer wishes to return to the main menu
     if sw_choice_letter == "X":
         return None
-    # Customer wishes to make an order
-
     # Get index for desired sandwich
     sw_type_index = get_index(alphabet_list, sw_choice_letter)
     # Get the name of the desired sandwich
@@ -346,11 +368,10 @@ def order_sandwich(sw_list, orders_list):
     return None
 
 
-def review_orders(orders_list, delivery):
+def review_orders(orders_list):
     """Allow the customer to review their orders.
 
     :param orders_list: list
-    :param delivery: boolean
     :return: None
     """
     # The customer cannot review orders if their cart is empty
@@ -361,7 +382,8 @@ def review_orders(orders_list, delivery):
     else:
         print("ORDER REVIEW")
         # Calculate total cost
-        order_total = get_order_total(complete_order_list, delivery)
+        order_total = get_order_total(complete_order_list)
+        print("*" * 90)
         # Print order review
         for i in range(0, len(orders_list)):
             output = "{} x {:60}: {:<1} x ${:4} = ${:4.2f}"\
@@ -371,10 +393,17 @@ def review_orders(orders_list, delivery):
                         orders_list[i][2],
                         orders_list[i][3])
             print(output)
+        if len(full_customer_details_list) == 2 and \
+                full_customer_details_list[1][0] == "Delivery":
+            print("{:>81}".format("+ $3 Delivery Fee"))
         # Print total charge
         total_charge = "{:<64}: ${:4.2f}".format("Total Charge", order_total)
         print("-" * 90)
         print(total_charge)
+        print("*" * 90)
+        if len(full_customer_details_list) == 1:
+            print("")
+            print("NOTE: Delivery fees may apply")
         return None
 
 
@@ -415,12 +444,14 @@ def edit_order(orders_list):
         # Display a review of customer orders
         print("." * 120)
         print("ORDER REVIEW")
+        print("*" * 90)
         for i in range(0, len(orders_list)):
             output = "{}: {} x {:60}"\
                 .format(order_letters_list[i],
                         orders_list[i][1],
                         orders_list[i][0])
             print(output)
+        print("*" * 90)
         print("." * 120)
 
         # Get customer to select which order to edit
@@ -434,7 +465,7 @@ def edit_order(orders_list):
 
         # Customer wishes to completely remove an order
         if user_choice == "A":
-            # Remove order
+            # Remove order from complete order list
             complete_order_list.pop(sw_index)
             # Provide customer confirmation of removal
             print("ACTION: Removed {} x {} Sandwiches"
@@ -520,9 +551,9 @@ def get_customer_details(customer_details_list):
         # Display collected details and ask if they wish to update them.
         print("UPDATE DETAILS?")
         print("We've already received the following details: ")
-        print("")
+        print("*" * 120)
         print_customer_details(customer_details_list)
-        print("")
+        print("*" * 120)
         update_details_msg = "Do you wish to update your details (Yes/No)? "
         update_details = get_valid_input(
             ["Yes", "No"], update_details_msg)
@@ -574,11 +605,11 @@ def get_customer_details(customer_details_list):
             customer_details_list.append(customer_details)
         # Customer selects delivery
         elif method == "B":
-            phone_number = get_valid_phone_number()
+            phone_number = get_valid_phone_number("Phone Number: (+64) ")
             number = str(get_integer("House Number: "))
             street = get_string("Street: ")
             suburb = get_string("Suburb: ")
-            postcode = str(get_valid_postcode("Postcode: "))
+            postcode = get_valid_postcode("Postcode: ")
             # Concatenate address details to create full address
             address = number + " " + street + ", " + suburb + ", " + postcode
             # Store customer name, address and phone number in a list
@@ -589,16 +620,17 @@ def get_customer_details(customer_details_list):
 
         # Get confirmation from customer regarding details
         print("STEP 3: CHECK YOUR DETAILS")
-        print("")
+        print("*" * 120)
         # Display collected customer details
         print_customer_details(customer_details_list)
-        print("")
+        print("*" * 120)
         # Ask customer if the collected details are accurate
         confirm = get_valid_input(
             ["Yes", "No"],
             "CONFIRM: Are the following details accurate (Yes/No)? ")
         # Customer confirms that the collected details are accurate
         if confirm == "Yes":
+            print("." * 120)
             # Confirm that details have been saved
             print("Thank you. Your details have been saved.")
             # Return to Main Menu
@@ -607,7 +639,8 @@ def get_customer_details(customer_details_list):
         elif confirm == "No":
             # Delete all details already collected and allow them to re-enter
             customer_details_list.pop(1)
-            print("Please Try Again")
+            print("." * 120)
+            print("Alright. Please Try Again.")
             print("." * 120)
 
 
@@ -632,14 +665,13 @@ def proceed_checkout(orders_list, customer_details_list):
         # Return to Main Menu
         return None
     else:
-        # Determine if the customer chose delivery or pickup
-        method = customer_details_list[0][0]
         # Print full receipt
-        print_receipt(orders_list, customer_details_list, method)
+        print_receipt(orders_list, customer_details_list)
         print()
         print("." * 120)
 
         # Get confirmation for completing the checkout process
+        checkout = "No"
         running = True
         while running is True:
             msg_confirm_checkout = "Confirm and Proceed to Checkout (Yes/No)? "
@@ -651,14 +683,10 @@ def proceed_checkout(orders_list, customer_details_list):
                 print("STEP 2: CHECKOUT")
                 print("Your Order Has Been Processed. Thank You for Supporting"
                       " the Marsden Gourmet Sandwich Bar!")
-                print("." * 120)
-                running = False
             # Customer does not wish to complete checkout process
             elif checkout == "No":
-                # Delete all customer details
-                full_customer_details_list.pop(1)
                 print("Returning to Main Menu")
-                running = False
+            running = False
     return checkout
 
 
@@ -667,75 +695,92 @@ def main():
 
     :return: None
     """
-    print("." * 120)
-    # Print welcome
-    print("Welcome to the Marsden Gourmet Sandwich Bar!")
-
-    # Sandwich Options and Prices
-    sandwich_list = [
-        ["A", "Halloumi, Apricot Jam and Coleslaw", 15.95],
-        ["B", "Crispy Pork Belly Banh Mi", 18.95],
-        ["C", "Roasted Beetroot, Carrot, Spiced Nuts and Feta Cheese", 15.95],
-        ["D", "Bratwurst Sausage, Scrambled Egg and Baby Spinach", 14.95],
-        ["E", "Smoked Salmon, Olives and Gouda Cheese", 16.95],
-        ["F", "Buttermilk Chicken, Pickled Cabbage and Crispy Shallots", 15.95]
-    ]
-
-    # Menu Option Lists
-    main_menu_list = [
-        ["A", "Display Sandwich Menu"],
-        ["B", "Place an Order"],
-        ["C", "Review Order"],
-        ["D", "Edit Order"],
-        ["E", "Cancel All Orders"],
-        ["F", "Enter Details"],
-        ["G", "Proceed to Checkout"],
-        ["X", "Quit"]
-    ]
-
-    running = True
-    while running is True:
+    going = True
+    while going is True:
         print("." * 120)
-        # Print Main Menu
-        print("MAIN MENU")
-        print_two_column_list(main_menu_list)
-        print("." * 120)
-        # Get customer's desired operation
-        user_choice = get_valid_input(
-            ["A", "B", "C", "D", "E", "F", "G", "X"],
-            "Select Option: ")
-        print("."*120)
+        # Print welcome
+        print("THE MARSDEN GOURMET SANDWICH BAR")
 
-        # Display sandwich menu
-        if user_choice == "A":
-            print_sandwich_menu(sandwich_list)
-        # Place an order
-        elif user_choice == "B":
-            order_sandwich(sandwich_list, complete_order_list)
-        # Review order
-        elif user_choice == "C":
-            delivery = False
-            review_orders(complete_order_list, delivery)
-        # Edit order
-        elif user_choice == "D":
-            edit_order(complete_order_list)
-        # Cancel all orders
-        elif user_choice == "E":
-            cancel_total_order(complete_order_list)
-        # Enter customer details
-        elif user_choice == "F":
-            get_customer_details(full_customer_details_list)
-        # Proceed to checkout
-        elif user_choice == "G":
-            checkout = proceed_checkout(
-                complete_order_list, full_customer_details_list)
-            if checkout == "Yes":
-                running = False
-        # Quit program
-        elif user_choice == "X":
-            print("Thank you for your time!")
+        # Sandwich Options and Prices
+        sandwich_list = [
+            ["A", "Halloumi, Apricot Jam and Coleslaw", 15.95],
+            ["B", "Crispy Pork Belly Banh Mi", 18.95],
+            ["C", "Roasted Beetroot, Carrot, Nuts and Feta Cheese", 15.95],
+            ["D", "Bratwurst Sausage, Scrambled Egg and Baby Spinach", 14.95],
+            ["E", "Smoked Salmon, Olives and Gouda Cheese", 16.95],
+            ["F", "Buttermilk Chicken, Pickled Cabbage and Shallots", 15.95]
+        ]
+
+        # Menu Option Lists
+        main_menu_list = [
+            ["A", "Display Sandwich Menu"],
+            ["B", "Place an Order"],
+            ["C", "Review Order"],
+            ["D", "Edit Order"],
+            ["E", "Cancel All Orders"],
+            ["F", "Enter Details"],
+            ["G", "Proceed to Checkout"],
+            ["X", "Quit"]
+        ]
+
+        running = True
+        while running is True:
             print("." * 120)
-            running = False
+            # Print Main Menu
+            print("MAIN MENU")
+            print_two_column_list(main_menu_list)
+            print("." * 120)
+            # Get customer's desired operation
+            user_choice = get_valid_input(
+                ["A", "B", "C", "D", "E", "F", "G", "X"],
+                "Select Option: ")
+            print("."*120)
+
+            # Display sandwich menu
+            if user_choice == "A":
+                print_sandwich_menu(sandwich_list)
+            # Place an order
+            elif user_choice == "B":
+                order_sandwich(sandwich_list, complete_order_list)
+            # Review order
+            elif user_choice == "C":
+                review_orders(complete_order_list)
+            # Edit order
+            elif user_choice == "D":
+                edit_order(complete_order_list)
+            # Cancel all orders
+            elif user_choice == "E":
+                cancel_total_order(complete_order_list)
+            # Enter customer details
+            elif user_choice == "F":
+                get_customer_details(full_customer_details_list)
+            # Proceed to checkout
+            elif user_choice == "G":
+                checkout = proceed_checkout(
+                    complete_order_list, full_customer_details_list)
+                if checkout == "Yes":
+                    print("." * 120)
+                    # Check if customer wants to make another order
+                    another_order = get_valid_input(
+                        ["Yes", "No"],
+                        "Do you wish to make another order (Yes/No)? ")
+                    if another_order == "Yes":
+                        # Delete all information from the previous order
+                        full_customer_details_list.pop(1)
+                        complete_order_list.clear()
+                        running = False
+                    elif another_order == "No":
+                        print("." * 120)
+                        print("Thank you for your time!")
+                        print("." * 120)
+                        running = False
+                        going = False
+            # Quit program
+            elif user_choice == "X":
+                running = False
+                print("Thank you for your time!")
+                print("." * 120)
+                going = False
     return None
 
 
