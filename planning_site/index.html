@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="assets/highlight/styles/tomorrow.css">
 <script src="assets/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-       
 
 <!-- Override CSS file - add your own CSS rules -->
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -47,9 +46,8 @@
 <!-- Overview -->
 <hr>
 <h1 id="o">Overview</h1>
-<p>This python program is a computer program that allows a
-	customer to order sandwiches for the 'Marsden Gourmet Sandwich Bar'
-	It will be designed to allow customers to see the menu,
+<p>This computer program allows a customer to order sandwiches from the 'Marsden Gourmet Sandwich Bar'.
+	It has been designed to allow customers to see the menu,
 	make an order, review their orders, edit their orders,
 	cancel their total order and proceed through a checkout.
 	During the checkout process, the customer will have to select
@@ -57,7 +55,9 @@
 	appropriately. That is, customers who select pickup will only
 	have to enter their name whereas customers who select a delivery
 	will have to order their name, address, phone number. A delivery
-	order will also incur a $3 delivery fee.
+	order will also incur a $3 delivery fee. The overall structure of the program
+	has been structured in such a way that there is one main function, out from which
+	the functions associated with the numerous features are called.
 </p>
 <hr>
 
@@ -111,7 +111,7 @@
 	tasks of highest priority at the top and those of lowest priority
 	at the bottom. It was regularly updated (i.e. new items added,
 	tasks reshuffled) throughout the project.
-	The following image displays the status of my Project Backlog at the start.
+	The following image displays the status of my Project Backlog partway through.
 </p>
 <img style="margin-top: 2em; margin-bottom: 2em" class="img-responsive" src="assets/img/initial_project_backlog.png" alt="Initial Project Backlog">
 
@@ -137,11 +137,11 @@
 		<b>Aim</b>
 		<p>In this sprint, I aim to create a basic program which can perform the following: </p>
 		<ul>
-			<li>Display the menu (names and prices of each sandwich)</li>
+			<li>Display the sandwich menu (descriptions and prices of each sandwich)</li>
 			<li>Allow the customer to quit the program</li>
 		</ul>
 		<br>
-		<p>I also aim for it to contain an option menu for the two features,
+		<p>I also aim for it to contain a 'Main Menu' for the two features, alongside
 			clear communication and a neat visual design. I would also like all
 			inputs to be efficiently collected, especially in regard to
 			case sensitivity</p>
@@ -150,10 +150,10 @@
 		<b>Program Plan</b>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_1/sprint_1_plan_a.png" alt="Sprint 1 Plan A">
+				<img class="img-responsive" src="assets/img/sprint_1/sprint_1_plan_a.png" alt="Sprint 1 Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_1/sprint_1_plan_b.png" alt="Sprint 1 Plan B">
+				<img class="img-responsive" src="assets/img/sprint_1/sprint_1_plan_b.png" alt="Sprint 1 Planning">
 			</div>
 		</div>
 
@@ -177,7 +177,7 @@
 			notifies the customer of when they enter an invalid input).
 			Furthermore, whenever the customer enters an invalid input,
 			they are given the option to enter that input repeatedly
-			until the input entered is valid. It stores information
+			until the input entered is valid. Furthermore, it stores information
 			about the sandwiches efficiently in a 2D (Multidimensional)
 			list and makes clear separation of sections with horizontal
 			rules for ease of use.</p>
@@ -192,7 +192,7 @@
 			inefficient (printed as a single multi-line string), which makes
 			it difficult to update. Hence, it may also be worthwhile to develop
 			a more efficient method of printing the menu options (e.g. by
-			creating a function which loops through a list).</p>
+			creating a function which loops through a 2D list).</p>
 
 		<hr>
 
@@ -216,10 +216,10 @@
 		<b>Program Plan</b>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_a.png" alt="Sprint 2 Plan A">
+				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_a.png" alt="Sprint 2 Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_b.png" alt="Sprint 2 Plan B">
+				<img class="img-responsive" src="assets/img/sprint_2/sprint_2_plan_b.png" alt="Sprint 2 Planning">
 			</div>
 		</div>
 
@@ -257,9 +257,10 @@
 
 		<p>Additionally, the mechanism for displaying the menu is significantly
 			more efficient than in the previous version in that it is displayed
-			by looping through a 2D list as opposed to printing a multi-line string.</p>
+			by looping through a 2D list as opposed to printing a multi-line string.
+			Furthermore, it always gives confirmation when an order has been processed.</p>
 
-		<p>However, there are still numerous areas where there is potential for
+		<p>However, there are still numerous areas with potential for
 			improvement. For example, there is a potential for a customer to order
 			an unrealistic quantity of sandwiches (eg. 100,000). To avoid this,
 			it would be beneficial for the program to impose a limit for the
@@ -312,18 +313,18 @@
 		<b>Program Plan</b>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_menu.png" alt="Sprint 3 Plan 1">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_menu.png" alt="Sprint 3: Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_limit.png" alt="Sprint 3 Plan 2">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_limit.png" alt="Sprint 3: Planning">
 			</div>
 		</div>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_accompanying_functions.png" alt="Sprint 3 Plan 3">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_accompanying_functions.png" alt="Sprint 3: Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_details.png" alt="Sprint 3 Plan 4">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_plan_details.png" alt="Sprint 3: Planning">
 			</div>
 		</div>
 		<!-- Planning Board -->
@@ -334,8 +335,8 @@
 		<b>Testing Completed Developments</b>
 		<div class="col-container">
 			<div class="col">
-				<p>Maximum of Five per Order</p>
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_make_order_maximum_5.png" alt="Sprint 3: Maximum of 5 per Order">
+				<p>Maximum of Five Sandwiches per Order</p>
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_make_order_maximum_5.png" alt="Sprint 3: Maximum of 5 Sandwiches per Order">
 
 			</div>
 			<div class="col">
@@ -365,33 +366,49 @@
 			PICKUP OR DELIVERY?, STEP 2: ENTER DETAILS). It also imposes a
 			limit of five sandwiches for each order type.</p>
 
-		<p>Through an extensive testing and reviewing process,
-			I can identify numerous areas for improvement. </p>
+		<p>However, through an extensive testing and reviewing process,
+			I still identified numerous areas for improvement. </p>
 
 		<div class="col-container">
 			<div class="col">
 				<hr>
 				<p>ERROR</p>
 				<p>The customer is able to make multiple orders for the same sandwich type.
-				This is problematic and should be addressed promptly, perhaps
-				by checking through the complete order list to see if that sandwich type
+				This is problematic in terms of a sandwich ordering business and should be addressed promptly.
+				To address this, I might check through the complete order list to see if that sandwich type
 				had not already been ordered before allowing the customer to continue the
 				ordering process.</p>
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_duplicate_orders.png" alt="Sprint 3 Error">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_duplicate_orders.png" alt="Sprint 3 Error: Duplicate Orders for Same Sandwich Type">
+			</div>
+			<div class="col">
+				<hr>
+				<p>CONCERN</p>
+				<p>I noticed a risky line of code on line 69, which could perhaps be
+				replaced by calling a function which loops through the relevant list
+				and returns an indication of whether the item is or isn't in the list.</p>
+				<td><img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_if_any.png" alt="Sprint 3 Error: Risky Line of Code"></td>
+			</div>
+		</div>
+		<div class="col-container">
+			<div class="col">
+				<hr>
+				<p>ERROR</p>
+				<p>The program allowed the customer to access the 'Proceed to Checkout' feature when
+				their cart was empty. This meant that no orders was displayed and the customer was presented
+				with $0.00, which is rather useless. To resolve this, I could make use an if, else
+				statement to ensure that the customer cannot access the checkout feature without first making
+				at least one order (i.e. the list must have a length greater than 0)</p>
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_checkout_empty_cart.png" alt="Sprint 3 Error: Checkout with Empty Cart">
 			</div>
 			<div class="col">
 				<hr>
 				<p>ERROR</p>
-				<p>This error had come about after attempting to proceed to the
-				checkout when the cart was empty. Through further
-				testing, I found this error to come up also when the customer had
-				attempted to review their orders when their cart was empty.
-				This error resulted from the fact that the program was expecting
-				a value from a list that did not exist. To resolve this, I could
-				make use an if, else statement to ensure that the customer cannot
-				access the order review and	checkout feature without first making
-				at least one order.</p>
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_no_orders_made.png" alt="Sprint 3 Error">
+				<p>The program allowed the customer to access the 'Review Order' feature when
+				their cart was empty. This meant that no orders was displayed and the customer was presented
+				with $0.00, which is rather useless. To resolve this, I could make use an if, else
+				statement to ensure that the customer cannot access the order review feature without first making
+				at least one order (i.e. the list must have a length greater than 0)</p>
+				<td><img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_review_empty_cart.png" alt="Sprint 3 Error: Reviewing Empty Cart"></td>
 			</div>
 		</div>
 		<div class="col-container">
@@ -403,15 +420,18 @@
 				country code). Hence, it would be ideal to demand a certain format
 				(i.e. with the country code) and then ensure that the customer
 				enters the relevant number of digits (e.g. +64 _ _ _ _ _ _ _ _)</p>
-				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_invalid_phone_number.png" alt="Sprint 3 Error">
+				<img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_invalid_phone_number.png" alt="Sprint 3 Error: Invalid Phone Number">
 			</div>
 			<div class="col">
 				<hr>
-				<p>CONCERN</p>
-				<p>I noticed a risky line of code on line 69, which could perhaps be
-				replaced by calling a function which loops through the relevant list
-				and returns an indication of whether the item is or isn't in the list.</p>
-				<td><img class="img-responsive" src="assets/img/sprint_3/sprint_3_error_if_any.png" alt="Sprint 3 Error"></td>
+				<p>ERROR</p>
+				<p>The program accepted an invalid address (i.e. wrong format). In context of a sandwich delivery,
+				this could be very problematic as there is a risk of the customer failing to provide part of their
+				address which is required (e.g. number, street, suburb, postcode). To address this, I could adapt
+				the program so that it requests inputs for each individual part of the address and then adds them
+				together. This would allow me to validate them individually in a later sprint.
+				</p>
+				<td><img class="img-responsive" src="assets/img/sprint_3/sprint_3_invalid_address_accepted.png" alt="Sprint 3 Error: Invalid Address Format"></td>
 			</div>
 		</div>
 		<div class="col-container">
@@ -458,18 +478,18 @@
 		<b>Program Plan</b>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_1.png" alt="Sprint 4: Planning Image">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_1.png" alt="Sprint 4: Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_3.png" alt="Sprint 4: Planning Image">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_3.png" alt="Sprint 4: Planning">
 			</div>
 		</div>
 		<div class="col-container">
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_2.png" alt="Sprint 4: Planning Image">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_2.png" alt="Sprint 4: Planning">
 			</div>
 			<div class="col">
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_4.png" alt="Sprint 4: Planning Image">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_plan_4.png" alt="Sprint 4: Planning">
 			</div>
 		</div>
 
@@ -481,8 +501,8 @@
 		<b>Testing Completed Developments</b>
 		<div class="col-container">
 			<div class="col">
-				<p>Cancelling Complete Order</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_cancel_total_orders.png" alt="Sprint 4: Cancelling Complete Order">
+				<p>Cancelling Total Order</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_cancel_total_orders.png" alt="Sprint 4: Cancelling Total Order">
 			</div>
 			<div class="col">
 				<p>Preventing Duplicate Orders for the Same Sandwich Type</p>
@@ -492,39 +512,39 @@
 
 		<div class="col-container">
 			<div class="col">
-				<p>Edit Order Quantity</p>
+				<p>Editing Sandwich Order Quantity</p>
 				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_edit_quantity.png" alt="Sprint 4: Edit Order Quantity">
 			</div>
 			<div class="col">
-				<p>Remove Sandwich Type Order</p>
+				<p>Removing Sandwich Type Order</p>
 				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_remove_sandwich_type.png" alt="Sprint 4: Remove Sandwich Type Order">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Preventing User from Reviewing Orders when No Orders have been Made</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_review_orders_empty.png" alt="Sprint 4: Prevent User from Reviewing Orders When No Orders">
+				<p>Preventing the Customer from Reviewing Orders when Cart is Empty</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_review_orders_empty.png" alt="Sprint 4: Prevent the customer from Reviewing Orders When No Orders">
 			</div>
 			<div class="col">
-				<p>Preventing User from Cancelling Complete Order when No Orders have been Made</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_cancel_total_orders_empty.png" alt="Sprint 4: Prevent User from Cancelling Complete Order When No Orders">
+				<p>Preventing the Customer from Cancelling Total Order when Cart is Empty</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_cancel_total_orders_empty.png" alt="Sprint 4: Prevent the customer from Cancelling Complete Order When Cart is Empty">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p>Preventing User from Editing Orders when No Orders have been Made</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_edit_order_empty.png" alt="Sprint 4: Prevent User from Editing Orders When No Orders">
+				<p>Preventing the Customer from Editing Orders when Cart is Empty</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_edit_order_empty.png" alt="Sprint 4: Prevent the customer from Editing Orders When Cart is Empty">
 			</div>
 			<div class="col">
-				<p>Preventing User from Proceeding to Checkout when No Orders have been Made</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_checkout_empty.png" alt="Sprint 4: Prevent User from Proceeding to Checkout When No Orders">
+				<p>Preventing the Customer from Proceeding to Checkout when Cart is Empty</p>
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_checkout_empty.png" alt="Sprint 4: Prevent the customer from Proceeding to Checkout When Cart is Empty">
 			</div>
 		</div>
 
-		<p>Ensure Valid Address and Phone Number</p>
-		<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_phone_number_address_valid.png" alt="Sprint 4: Valid Address and Phone Number">
+		<p>Ensure Address and Phone Number in Correct Format</p>
+		<img class="img-responsive" src="assets/img/sprint_4/sprint_4_test_phone_number_address_valid.png" alt="Sprint 4: Valid Format for Address and Phone Number">
 
 		<br>
 		<br>
@@ -534,6 +554,7 @@
 		<p>At this stage, the program can successfully facilitate an ordering process that ensures that:</p>
 		<ul>
 			<li>The customer enters their phone number in a valid format (i.e. +64 _ _ _ _ _ _ _ _)</li>
+			<li>The customer enters their address in a roughly correct format. </li></lie>
 			<li>The customer is unable to make more than one order for the same sandwich type (preventing duplicate orders)</li>
 			<li>There is an avenue for the customer to edit the orders in their cart and cancel all their orders (with confirmation).</li>
 			<li>The customer is unable to access the order review, order editing, cancelling total order and checkout features if their cart is empty.</li>
@@ -550,7 +571,7 @@
 					was not possible to do for with an entry of nothing. To address this, I might adapt the get_integer functions so that
 					it will not accept any entry (for the quantity) that is not an integer and would continue to ask for an entry
 					until a valid input is provided.</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_[enter]_into_int_input.png" alt="Sprint 4: [enter] into int input">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_[enter]_into_int_input.png" alt="Sprint 4: [enter] (i.e. nothing) into int input">
 			</div>
 			<div class="col">
 				<hr>
@@ -602,7 +623,7 @@
 			<div class="col">
 				<hr>
 				<p>ERROR</p>
-				<p>The program accepted a negative value for the quantity of sandwiches. In context of sandwich ordering,
+				<p>The program accepted a value of zero for the quantity of sandwiches. In context of sandwich ordering,
 				this could be very problematic. To address this, I might adapt the get_quantity() function so that
 				it will only accept integer entries (for the quantity) that are greater than 0. This might be achieved
 				by and if, else statement and would continue to ask for an entry until a valid input is provided. </p>
@@ -628,7 +649,7 @@
 				(The image below displays the outcome - which is the same for both cases) In context of sandwich ordering, this could be very problematic.
 				To address this, I might adapt the get_string() function so that it will strip all entries of spaces and check that they have a length greater than 0.
 				It will continue to ask for an entry until a valid input is provided.</p>
-				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_space_in_string_input_region.png" alt="Sprint 4: Accepting Spec in String Input Region">
+				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_space_in_string_input_region.png" alt="Sprint 4: Accepting Spaces in String Input Region">
 			</div>
 		</div>
 
@@ -636,7 +657,8 @@
 			<div class="col">
 				<hr>
 				<p>ERROR</p>
-				<p>This error came about from the fact that I had forgotten to break the while loop with 'new_quantity_loop = False'. This was a quick fix,
+				<p>Once selecting the order the customer desired to edit, the program would ask for the input again, not proceeding
+					to the next stage of the process. This error came about from the fact that I had forgotten to break the while loop. This was a quick fix (i.e. adding 'new_quantity_loop = False')
 					which I had resolved promptly in this sprint. Regardless, this error reminded to be more meticulous in my writing of code.</p>
 				<img class="img-responsive" src="assets/img/sprint_4/sprint_4_error_edit_didn't_stop_loop.png" alt="Sprint 4: Loop did not break">
 			</div>
@@ -698,7 +720,7 @@
 			</div>
 			<div class="col">
 				<p>Incorporating DocTypes for each Function (Example)</p>
-				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_doctype.png" alt="Sprint 5: Doctypes">
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_doctype.png" alt="Sprint 5: DocTypes">
 			</div>
 		</div>
 
@@ -770,7 +792,7 @@
 				<p>____<code>running = False</code></p>
 				<p>which simply breaks the while loop (as opposed to exiting the function). To address this, I might replace
 				'running = False' with 'return None'</p>
-				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_error_X_not_returning_to_main_menu.png" alt="Sprint 5: Error. Not returning to main menu under 'order sandwich'">
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_error_X_not_returning_to_main_menu.png" alt="Sprint 5: Error. Not returning to main menu after X in 'order sandwich' feature">
 			</div>
 		</div>
 
@@ -790,7 +812,7 @@
 				<hr>
 				<p>This style error arose from the fact that I had consistently used <code>if variable == True</code> as opposed to the more 'acceptable' format of <code>if variable is True</code>.
 				I could address this issue by replacing all the '==' conditions for booleans (eg. True, False) with 'is'.</p>
-				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_running==True.png" alt="Sprint 5: Pycharm Style Error - == True">
+				<img class="img-responsive" src="assets/img/sprint_5/sprint_5_style_error_pc_running==True.png" alt="Sprint 5: Pycharm Style Error - '== True' vs 'is True'">
 			</div>
 		</div>
 		<div class="col-container">
@@ -889,7 +911,7 @@
 				<img class="img-responsive" src="assets/img/sprint_6/sprint_6_test_edit_nonexistent_order.png" alt="Sprint 6: Validating against attempts to Edit a Nonexistent Order">
 			</div>
 			<div class="col">
-				<p>Ensuring that Program will return to Main Menu when the Customer Presses X</p>
+				<p>Program will return to Main Menu when the Customer Presses X</p>
 				<img class="img-responsive" src="assets/img/sprint_6/sprint_6_test_return_main_menu_press_X.png" alt="Sprint 6: Ensuring that Program will return to Main Menu when the Customer Presses X">
 			</div>
 		</div>
@@ -971,7 +993,7 @@ else:
 		<p>At this stage, the code for the program possesses the following characteristics: </p>
 		<ul>
 			<li>A separate validation function for inputs that have a fixed set of acceptable values (e.g. 'yes' or 'no')</li>
-			<li>Variables and function parameters that have more comprehensive names that more clearly reflect what they represent (e.g. 'sandwich_list' rather than 'list_1'</li>
+			<li>Variables and function parameters that have more comprehensive names that more clearly reflect what they represent (e.g. 'sandwich_list' rather than 'list_1')</li>
 			<li>The function facilitating the checkout feature no longer calling on the function facilitating the collection of customer details.</li>
 		</ul>
 		<p>However, through an extensive testing process, I have identified numerous errors and areas for improvement: </p>
@@ -983,7 +1005,7 @@ else:
 				This has resulted from the fact that the phone number entry has been entered as an integer input
 				which removes all leading zeros. To address this, I might change the program so that the phone number
 				entry is accepted as a string, then checked to be an integer, before being checked for length and returned if valid.</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_phone_number_00000000.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_phone_number_00000000.png" alt="Sprint 7: Not recognising leading zeroes in phone number">
 			</div>
 			<div class="col">
 				<hr>
@@ -992,7 +1014,7 @@ else:
 				This has resulted from the fact that the postcode entry has been entered as an integer input
 				which removes all leading zeros. To address this, I might change the program so that the postcode
 				entry is accepted as a string, then checked to be an integer, before being checked for length and returned if valid.</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_postcode_0000.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_postcode_0000.png" alt="Sprint 7: Not recognising leading zeroes in postcode">
 			</div>
 		</div>
 		<div class="col-container">
@@ -1004,7 +1026,7 @@ else:
 				I might adapt my get_string() function so that it loops through each character in the input (which has been stripped of spaces and made into upper case),
 				and checking if it is in the alphabet_list (which contains all the letters in the alphabet). If any character cannot be found in
 				alphabet_list, it is invalid and the program will take the due action of informing the customer and requesting a re-enter.</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_entering_integers_for_free_string_input_regions.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_entering_integers_for_free_string_input_regions.png" alt="Sprint 7: Accepting string inputs with non-letter characters">
 			</div>
 			<div class="col">
 				<hr>
@@ -1013,7 +1035,7 @@ else:
 				To address this, I might add a feature after the code associated with the checkout process, asking if the customer wishes to
 				make another order. The code would then receive input from the user, ending the program if the customer selects 'no' and allowing the program to repeat
 				(also clearing all customer and order details from the previous order) if the customer selects 'yes'.</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_end_checkout_no_option_for_new_order.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_end_checkout_no_option_for_new_order.png" alt="Sprint 7: No option to start new order after checkout completion">
 			</div>
 		</div>
 		<div class="col-container">
@@ -1027,7 +1049,7 @@ else:
 				deleted so that the variable 'delivery' was simply assigned the default value of 'False'. Perhaps the program would benefit from simplifying
 				this process (e.g. by checking if the collection preference set in the full_customer_details_list is 'Delivery' or 'Pickup')
 				</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_no_delivery_fee.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_no_delivery_fee.png" alt="Sprint 7: Delivery fee not accounted for">
 			</div>
 			<div class="col">
 				<hr>
@@ -1036,16 +1058,16 @@ else:
 				and return to the main menu. To address this, I will remove the <code>full_customer_details_list.pop(1)</code>
 				that has been placed under <code>if checkout == "No"</code> (i.e. after the customer has indicated that they do not wish
 				to proceed through the checkout).</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_continue_checkout_no_details_deleted.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_continue_checkout_no_details_deleted.png" alt="Sprint 7: Unnecessary clearing of customer details if customer exits checkout part-way">
 			</div>
 		</div>
 		<div class="col-container">
 			<div class="col">
 				<hr>
 				<p>AREA FOR IMPROVEMENT</p>
-				<p>The program could do with some clearer compartmentalisation for the sake of usability. To achieve this,
+				<p>The program could do with some clearer compartmentalisation (example below) for the sake of usability. To achieve this,
 				I might incorporate more horizontal rules.</p>
-				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_compartmentalisation.png" alt="Sprint 7: ">
+				<img class="img-responsive" src="assets/img/sprint_7/sprint_7_error_compartmentalisation.png" alt="Sprint 7: Improve Compartmentalisation ">
 			</div>
 		</div>
 <hr>
@@ -1072,21 +1094,17 @@ else:
 		<b>Program Plan</b>
 		<div class="col-container">
 			<div class="col">
-				<p></p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_1.png" alt="Sprint 8: Planning">
 			</div>
 			<div class="col">
-				<p></p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_2.png" alt="Sprint 8: Planning">
 			</div>
 		</div>
 		<div class="col-container">
 			<div class="col">
-				<p></p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_3.png" alt="Sprint 8: Planning">
 			</div>
 			<div class="col">
-				<p></p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_plan_4.png" alt="Sprint 8: Planning">
 			</div>
 		</div>
@@ -1100,34 +1118,34 @@ else:
 
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<p>Recognising the leading zeros of postcode and phone number entries as characters</p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_leading_zeros_phone_number_postcode.png" alt="Sprint 8: Recognising Leading Zeros">
 			</div>
 			<div class="col">
-				<p></p>
+				<p>Customer details are not cleared if the customer chooses to exit the checkout process half-way</p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_not_deleting_customer_details.png" alt="Sprint 8: Not Deleting Customer Details After Existing Checkout Partway">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<p>Option for starting a new order after checkout completion</p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_option_to_make_another_order_after_checkout.png" alt="Sprint 8: Option of Starting a New Order After Checkout Completion">
 			</div>
 			<div class="col">
-				<p></p>
+				<p>Validating against inputs with non-letters characters for string input regions where there is no fixed set of acceptable values (e.g. name, suburb, street)</p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_numbers_in_string_input_regions.png" alt="Sprint 8: Validating Against Inputs with Non-Letter Characters In String Input Regions">
 			</div>
 		</div>
 
 		<div class="col-container">
 			<div class="col">
-				<p></p>
+				<p>Clearer Compartmentalisation</p>
 				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_compartmentalisation.png" alt="Sprint 8: Compartmentalisation">
 			</div>
 			<div class="col">
-				<p></p>
-				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_delivery_fee.png" alt="Sprint 8: Ensuring $3 Delivery Fee is Considered">
+				<p>Accounting for the $3 Delivery Fee</p>
+				<img class="img-responsive" src="assets/img/sprint_8/sprint_8_test_delivery_fee.png" alt="Sprint 8: Accounting for the $3 Delivery Fee">
 			</div>
 		</div>
 
@@ -1140,14 +1158,20 @@ else:
 			the program looped through each character in the input to check if it was a letter, it identified the whitespace, which was not a letter. After some inspection, I realised that
 			this might have resulted from the fact that I had used the <code>.strip()</code> method to remove whitespaces (which only acts to remove leading and trailing
 			whitespaces, not whitespaces between characters. To address this, I replaced the <code>.strip()</code> with <code>.replace(" ", "")</code>.</p>
-		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping_test.png" alt="Sprint 8: ">
+		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping_test.png" alt="Sprint 8: Test for String not Stripping">
 		<br>
 		<p>After resolving this error, the following outcome was achieved: </p>
-		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping.png" alt="Sprint 8: ">
+		<img class="img-responsive" src="assets/img/sprint_8/sprint_8_error_not_stripping.png" alt="Sprint 8: String not Stripping error Resolved">
 		<br>
 		<!-- Testing Program -->
 		<b>Testing Full Program</b>
-		<p>At this stage, I would declare the sandwich ordering program to be fully functional.</p>
+		<p>At this stage, I would declare the sandwich ordering program to be fully functional.
+		The vast majority of its capabilities are displayed in the following video.</p>
+		<div class='video-container'>
+			<video controls>
+			<source src="assets/sandwich_ordering_full_test.mp4" type="video/mp4">
+			</video>
+		</div>
 
 <hr>
 
@@ -1220,13 +1244,13 @@ else:
 				that do not use complex or technical language.</td>
             <td>The relevant implication of Usability has been addressed in this program in several ways.
 				<ul>
-					<li>COMPARTMENTALISATION: Horizontal rules have been integrated throughout the program to achieve a degree of compartmentalisation. The objective with this was to ensure ease of use for the customer.</li>
+					<li>COMPARTMENTALISATION: Horizontal rules have been integrated throughout the program to achieve a degree of compartmentalisation. The objective with this was to ensure a neat display and thus, an ease of use for the customer.</li>
 					<br>
 					<li>HEADINGS: Clear headings (e.g. "STEP 1: CONFIRM ORDER AND DETAILS") have been integrated throughout the program to ensure that the customer is always aware of where they are in a process.</li>
 					<br>
 					<li>PLAIN LANGUAGE: Plain, polite language (as opposed to complex or technical language) has been used throughout the program to ensure that communication with the customer is always clear and effective.</li>
 					<br>
-					<li>CONTINUOUS FEEDBACK: Each of the customer’s actions is met with clear and appropriate feedback (e.g. "ERROR: Invalid Input.") when an error has occurred, and a statement of confirmation for all customer actions (e.g."ACTION: All orders have been cancelled")</li>
+					<li>CONTINUOUS FEEDBACK: Any errors are met with clear and polite feedback (e.g. "ERROR: Invalid Input."), and all customer actions are met with a statement of confirmation (e.g."ACTION: All orders have been cancelled")</li>
 					<br>
 					<li>AVENUE TO 'EXIT': During the development of this program, I made a deliberate effort to ensure that a customer would always be provided with an avenue to ‘exit’ the process they are currently in and return to the main menu whenever they wish. </li>
 					<br>

@@ -70,3 +70,12 @@
 .hljs-strong {
   font-weight: bold;
 }
+
+.video-container {
+    margin: 3% 10%;
+}
+video {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
